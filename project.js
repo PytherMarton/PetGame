@@ -10,6 +10,27 @@ function eat(){
   happiness = happiness +7;
 }
 
+function drink(){
+  health = health +12;
+  happiness = happiness +7;
+}
+
+function play(){
+  health = health +12;
+  happiness = happiness +7;
+}
+
+function hunt(){
+  health = health +12;
+  happiness = happiness +7;
+}
+
+function learn(){
+  health = health +12;
+  happiness = happiness +7;
+}
+
+
 const magic = () => {
   health += 10;
   happiness += 10;
@@ -300,50 +321,71 @@ const gameLoop = () => {
     ])
     .then((answer) => {
       if (answer.optionP == "Check your Pet Status >"){
+        console.log("-------------------")
         console.log(pet);
+        console.log("-------------------")
         console.log(`Health: ${health}`);
         console.log(`Happiness: ${happiness}`);
         console.log(`Attack: ${attack}`);
         console.log(`Defense: ${defense}`);
+        console.log("-------------------")
       }
       if (answer.optionP == "Eat"){
+        console.log("-------------------")
         eat();
+        console.log("-------------------")
       }
       if (answer.optionP == "Drink"){
-        console.log(pet);
-        console.log(`Health: ${health}`);
-        console.log(`Happiness: ${happiness}`);
-        console.log(`Attack: ${attack}`);
-        console.log(`Defense: ${defense}`);
+        console.log("-------------------")
+        drink();
+        console.log("-------------------")
       }
       if (answer.optionP == "Play"){
-        console.log(pet);
-        console.log(`Health: ${health}`);
-        console.log(`Happiness: ${happiness}`);
-        console.log(`Attack: ${attack}`);
-        console.log(`Defense: ${defense}`);
+        console.log("-------------------")
+        play();
+        console.log("-------------------")
       }
       if (answer.optionP == "Hunt"){
-        console.log(pet);
-        console.log(`Health: ${health}`);
-        console.log(`Happiness: ${happiness}`);
-        console.log(`Attack: ${attack}`);
-        console.log(`Defense: ${defense}`);
+        console.log("-------------------")
+        hunt();
+        console.log("-------------------")
       }
       if (answer.optionP == "Learn"){
-        console.log(pet);
-        console.log(`Health: ${health}`);
-        console.log(`Happiness: ${happiness}`);
-        console.log(`Attack: ${attack}`);
-        console.log(`Defense: ${defense}`);
+        console.log("-------------------")
+        learn();
+        console.log("-------------------")
       }
       if (answer.optionP == "Use your Unic skill"){
-        if (pet == "Unicorn") {
+        if (pet.skill == "Magic") {
+          console.log("-------------------")
+          console.log(">Magic< has been used!")
+          console.log("-------------------")
+          console.log(`Health: +10`);
+          console.log(`Happiness: +10`);
+          console.log(`Attack: +10`);
+          console.log(`Defense: +10`);
           magic();
-        } else if (pet == "Seahorse") {
+          console.log("-------------------")
+        } else if (pet.skill == "Meditate") {
+          console.log("-------------------")
+          console.log(">Meditate< has been used!")
+          console.log("-------------------")
+          console.log(`Health: +35`);
+          console.log(`Happiness: +35`);
+          console.log(`Attack: -10`);
+          console.log(`Defense: -35`);
           meditate();
+          console.log("-------------------")
         } else {
+          console.log("-------------------")
+          console.log(">Bite< has been used!")
+          console.log("-------------------")
+          console.log(`Health: -10`);
+          console.log(`Happiness: +25`);
+          console.log(`Attack: +10`);
+          console.log(`Defense: -10`);
           bite();
+          console.log("-------------------")
         }
       }
     })
