@@ -1,5 +1,6 @@
 const { shark } = require("cli-spinners");
 const inquirer = require("inquirer");
+const colors = require('colors');
 
 health = 100;
 happiness = 100;
@@ -40,19 +41,13 @@ function statusOption () {
       if (answer.statusOptionP == "Full status"){
         console.log("-------------------")
         console.log(pet);
-        console.log("-------------------")
-        console.log(`Health: ${health}`);
-        console.log(`Happiness: ${happiness}`);
-        console.log(`Attack: ${attack}`);
-        console.log(`Defense: ${defense}`);
-        console.log("-------------------")
+        console.log("--------------------------------------------------------------")
+        console.log("|",`Health: ${health}`.green ,"||", `Happiness: ${happiness}`.blue, "||", `Attack: ${attack}`.red, "||", `Defense: ${defense}`.magenta, "|");
+        console.log("--------------------------------------------------------------")
       } else {
-        console.log("-------------------")
-        console.log(`Health: ${health}`);
-        console.log(`Happiness: ${happiness}`);
-        console.log(`Attack: ${attack}`);
-        console.log(`Defense: ${defense}`);
-        console.log("-------------------")
+        console.log("--------------------------------------------------------------")
+        console.log("|",`Health: ${health}`.green ,"||", `Happiness: ${happiness}`.blue, "||", `Attack: ${attack}`.red, "||", `Defense: ${defense}`.magenta, "|");
+        console.log("--------------------------------------------------------------")
       }
     })
     .then(() => gameLoop())
@@ -75,8 +70,8 @@ function eat () {
         console.log("-------------------")
         health += 10;
         happiness += 10;
-        console.log(`Health: +10`);
-        console.log(`Happiness: +10`);
+        console.log(`Health: +10`.green);
+        console.log(`Happiness: +10`.blue);
         console.log("-------------------")
       }
       if (answer.eatP == "Cake") {
@@ -85,8 +80,8 @@ function eat () {
         console.log("-------------------")
         health -= 10;
         happiness += 20;
-        console.log(`Health: -10`);
-        console.log(`Happiness: +20`);
+        console.log(`Health:`.green, `-10`.red);
+        console.log(`Happiness: +20`.blue);
         console.log("-------------------")
       }
       if (answer.eatP == "Big Mac") {
@@ -95,8 +90,8 @@ function eat () {
         console.log("-------------------")
         health -= 30;
         happiness += 30;
-        console.log(`Health: -30`);
-        console.log(`Happiness: +30`);
+        console.log(`Health:`.green, `-30`.red);
+        console.log(`Happiness: +30`.blue);
         console.log("-------------------")
       }
       if (answer.eatP == "Protein Bar") {
@@ -105,8 +100,8 @@ function eat () {
         console.log("-------------------")
         health += 20;
         happiness += 10;
-        console.log(`Health: +20`);
-        console.log(`Happiness: +10`);
+        console.log(`Health: +20`.green);
+        console.log(`Happiness: +10`.blue);
         console.log("-------------------")
       }
     })
@@ -131,8 +126,8 @@ function drink () {
         console.log("-------------------")
         health += 15;
         happiness += 15;
-        console.log(`Health: +15`);
-        console.log(`Happiness: +15`);
+        console.log(`Health: +15`.green);
+        console.log(`Happiness: +15`.blue);
         console.log("-------------------")
       }
       if (answer.drinkP == "Coffee") {
@@ -141,8 +136,8 @@ function drink () {
         console.log("-------------------")
         health -= 15;
         happiness += 15;
-        console.log(`Health: -15`);
-        console.log(`Happiness: +15`);
+        console.log(`Health:`.green, `-15`.red);
+        console.log(`Happiness: +15`.blue);
         console.log("-------------------")
       }
       if (answer.drinkP == "Coke") {
@@ -151,8 +146,8 @@ function drink () {
         console.log("-------------------")
         health -= 40;
         happiness += 40;
-        console.log(`Health: -30`);
-        console.log(`Happiness: +40`);
+        console.log(`Health:`.green, `-30`.red);
+        console.log(`Happiness: +40`.blue);
         console.log("-------------------")
       }
       if (answer.drinkP == "Magic Potion") {
@@ -163,8 +158,8 @@ function drink () {
         number2 = Math.floor(Math.random()*20);
         health += number1;
         happiness += number2;
-        console.log(`Health: +${number1}`);
-        console.log(`Happiness: +${number2}`);
+        console.log(`Health: +${number1}`.green);
+        console.log(`Happiness: +${number2}`.blue);
         console.log("-------------------")
       }
     })
@@ -1650,12 +1645,9 @@ const status = () => {
       if (answer.statusP == "Yes"){
         console.log("-------------------")
         console.log(pet);
-        console.log("-------------------")
-        console.log(`Health: ${health}`);
-        console.log(`Happiness: ${happiness}`);
-        console.log(`Attack: ${attack}`);
-        console.log(`Defense: ${defense}`);
-        console.log("-------------------")
+        console.log("--------------------------------------------------------------")
+        console.log("|",`Health: ${health}`.green ,"||", `Happiness: ${happiness}`.blue, "||", `Attack: ${attack}`.red, "||", `Defense: ${defense}`.magenta, "|");
+        console.log("--------------------------------------------------------------")
         console.log("Let's interact with your pet.")
         console.log("-------------------")
       } else {
