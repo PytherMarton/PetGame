@@ -321,38 +321,71 @@ function learn () {
     .then((answer) => {
       if (answer.spanishP == "Phrases") {
         console.log("-------------------")
-        console.log("Let's learn some Math!")
+        console.log("Let's learn some Phrases in Spanish!")
         console.log("-------------------")
-        math();
-        console.log()
+        console.log("Hello = Hola")
+        console.log("Good Morning = Buenos dias")
+        console.log("Good Afternoon = Buenos tardes")
+        console.log("Good Night = Buenos noches")
+        console.log("-------------------")
+        happiness += 1;
+        console.log("Happiness: +1")
+        console.log("-------------------")
       }
       if (answer.spanishP == "Travel") {
         console.log("-------------------")
-        console.log("Let's learn some Spanish!")
+        console.log("Let's learn some Travel phrases in Spanish!")
         console.log("-------------------")
-        spanish();
+        console.log("Where = Donde")
+        console.log("Passport = Pasaporte")
+        console.log("Reservation = Reserva")
+        console.log("Airport = Aeropuerto")
+        console.log("-------------------")
+        happiness += 2;
+        console.log("Happiness: +2")
         console.log("-------------------")
       }
       if (answer.spanishP == "Family") {
         console.log("-------------------")
-        console.log("Let's learn some Programming!")
+        console.log("Let's learn some Family phrases in Spanish!")
         console.log("-------------------")
-        programming();
+        console.log("Mother = Madre")
+        console.log("Father = Padre")
+        console.log("Girl = Nina")
+        console.log("Boy = Nino")
+        console.log("-------------------")
+        happiness += 3;
+        console.log("Happiness: +3")
         console.log("-------------------")
       }
       if (answer.spanishP == "Restaurant") {
         console.log("-------------------")
-        console.log("You need to complete Math/Spanish/Programming, to unlock Advanced learning.")
+        console.log("Let's learn some Restaurant phrases in Spanish!")
         console.log("-------------------")
-        gameLoop();
+        console.log("Restaurant = Restaurante")
+        console.log("Table = Mesa")
+        console.log("Closed = Cerrado")
+        console.log("Money = Dinero")
+        console.log("-------------------")
+        happiness += 4;
+        console.log("Happiness: +4")
+        console.log("-------------------")
       }
       if (answer.spanishP == "Shopping") {
         console.log("-------------------")
-        console.log("You need to complete the Advanced learning first!")
+        console.log("Let's learn some Shopping phrases in Spanish!")
         console.log("-------------------")
-        gameLoop();
+        console.log("Clothing = Ropa")
+        console.log("Cheap = Barato")
+        console.log("Shirt = Camisa")
+        console.log("Vestido = Dress")
+        console.log("-------------------")
+        happiness += 5;
+        console.log("Happiness: +5")
+        console.log("-------------------")
       }
     })
+    .then(() => gameLoop())
   }
   const programming = () => {
 
