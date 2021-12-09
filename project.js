@@ -5,7 +5,22 @@ happiness = 100;
 attack = 100;
 defense = 100;
 
+function time () {
+  health -= 1;
+  happiness -= 1;
+  attack -= 1;
+  defense -= 1;  
+}
+
+function timeReverse() {
+  health += 1;
+  happiness += 1;
+  attack += 1;
+  defense += 1;   
+}
+
 function statusOption () {
+  timeReverse();
   inquirer
     .prompt([
       {
@@ -161,16 +176,343 @@ function hunt () {
 }
 
 function learn () {
-  health = health +12;
-  happiness = happiness +7;
+  const math = () => {
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "mathP",
+        message: "What would you like to learn first?",
+        choices: ["Counting", "Addition", "Subtraction", "Multiplication", "Division"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.mathP == "Counting") {
+        console.log("-------------------")
+        console.log("Let's learn how to count form 1 to 10!")
+        console.log("-------------------")
+        console.log("1")
+        console.log("1, 2")
+        console.log("1, 2, 3")
+        console.log("1, 2, 3, 4")
+        console.log("1, 2, 3, 4, 5")
+        console.log("1, 2, 3, 4, 5, 6")
+        console.log("1, 2, 3, 4, 5, 6, 7")
+        console.log("1, 2, 3, 4, 5, 6, 7, 8")
+        console.log("1, 2, 3, 4, 5, 6, 7, 8, 9")
+        console.log("1, 2, 3, 4, 5, 6, 7, 8, 9, 10")
+        console.log("-------------------")
+        timeReverse();
+        console.log(`Health: +1`);
+        console.log(`Happiness: +1`);
+        console.log(`Attack: +1`);
+        console.log(`Defense: +1`);
+        console.log("-------------------")
+      }
+      if (answer.mathP == "Addition") {
+        console.log("-------------------")
+        console.log("Let's learn basic Addition!")
+        console.log("-------------------")
+        console.log("1 + 1 = 2")
+        console.log("1 + 2 = 3")
+        console.log("1 + 3 = 4")
+        console.log("1 + 4 = 5")
+        console.log("1 + 5 = 6")
+        console.log("1 + 6 = 7")
+        console.log("1 + 7 = 8")
+        console.log("1 + 8 = 9")
+        console.log("1 + 9 = 10")
+        console.log("1 + 10 = 11")
+        console.log("-------------------")
+        timeReverse();
+        timeReverse();
+        console.log(`Health: +2`);
+        console.log(`Happiness: +2`);
+        console.log(`Attack: +2`);
+        console.log(`Defense: +2`);
+        console.log("-------------------")
+      }
+      if (answer.mathP == "Subtraction") {
+        console.log("-------------------")
+        console.log("Let's learn basic Subtraction!")
+        console.log("-------------------")
+        console.log("10 - 1 = 9")
+        console.log("10 - 2 = 8")
+        console.log("10 - 3 = 7")
+        console.log("10 - 4 = 6")
+        console.log("10 - 5 = 5")
+        console.log("10 - 6 = 4")
+        console.log("10 - 7 = 3")
+        console.log("10 - 8 = 2")
+        console.log("10 - 9 = 1")
+        console.log("10 - 10 = 0")
+        console.log("-------------------")
+        timeReverse();
+        timeReverse();
+        timeReverse();
+        console.log(`Health: +3`);
+        console.log(`Happiness: +3`);
+        console.log(`Attack: +3`);
+        console.log(`Defense: +3`);
+        console.log("-------------------")
+      }
+      if (answer.mathP == "Multiplication") {
+        console.log("-------------------")
+        console.log("Let's learn basic Multiplication!")
+        console.log("-------------------")
+        console.log("1 x 1 = 1")
+        console.log("1 x 2 = 2")
+        console.log("1 x 3 = 3")
+        console.log("1 x 4 = 4")
+        console.log("1 x 5 = 5")
+        console.log("1 x 6 = 6")
+        console.log("1 x 7 = 7")
+        console.log("1 x 8 = 8")
+        console.log("1 x 9 = 9")
+        console.log("1 x 10 = 10")
+        console.log("-------------------")
+        timeReverse();
+        timeReverse();
+        timeReverse();
+        console.log(`Health: +3`);
+        console.log(`Happiness: +3`);
+        console.log(`Attack: +3`);
+        console.log(`Defense: +3`);
+        console.log("-------------------")
+      }
+      if (answer.mathP == "Division") {
+        console.log("-------------------")
+        console.log("Let's learn basic Division!")
+        console.log("-------------------")
+        console.log("2 / 1 = 2")
+        console.log("4 / 2 = 2")
+        console.log("8 / 2 = 4")
+        console.log("16 / 2 = 8")
+        console.log("32 / 2 = 18")
+        console.log("64 / 2 = 32")
+        console.log("128 / 2 = 64")
+        console.log("256 / 2 = 128")
+        console.log("512 / 2 = 256")
+        console.log("1024 / 2 = 512")
+        console.log("-------------------")
+        timeReverse();
+        timeReverse();
+        timeReverse();
+        timeReverse();
+        console.log(`Health: +4`);
+        console.log(`Happiness: +4`);
+        console.log(`Attack: +4`);
+        console.log(`Defense: +4`);
+        console.log("-------------------")
+      }
+    })
+    .then(() => gameLoop())
+  }
+  const spanish = () => {
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "spanishP",
+        message: "With which topic would you like to start with?",
+        choices: ["Phrases", "Travel", "Family", "Restaurant", "Shopping"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.spanishP == "Phrases") {
+        console.log("-------------------")
+        console.log("Let's learn some Math!")
+        console.log("-------------------")
+        math();
+        console.log()
+      }
+      if (answer.spanishP == "Travel") {
+        console.log("-------------------")
+        console.log("Let's learn some Spanish!")
+        console.log("-------------------")
+        spanish();
+        console.log("-------------------")
+      }
+      if (answer.spanishP == "Family") {
+        console.log("-------------------")
+        console.log("Let's learn some Programming!")
+        console.log("-------------------")
+        programming();
+        console.log("-------------------")
+      }
+      if (answer.spanishP == "Restaurant") {
+        console.log("-------------------")
+        console.log("You need to complete Math/Spanish/Programming, to unlock Advanced learning.")
+        console.log("-------------------")
+        gameLoop();
+      }
+      if (answer.spanishP == "Shopping") {
+        console.log("-------------------")
+        console.log("You need to complete the Advanced learning first!")
+        console.log("-------------------")
+        gameLoop();
+      }
+    })
+  }
+  const programming = () => {
+
+  }
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "learnP",
+        message: "What would you like to learn?",
+        choices: ["Math", "Spanish", "Programming", "Advanced learning", "Pro learning"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.learnP == "Math") {
+        console.log("-------------------")
+        console.log("Let's learn some Math!")
+        console.log("-------------------")
+        math();
+        console.log()
+      }
+      if (answer.learnP == "Spanish") {
+        console.log("-------------------")
+        console.log("Let's learn some Spanish!")
+        console.log("-------------------")
+        spanish();
+      }
+      if (answer.learnP == "Programming") {
+        console.log("-------------------")
+        console.log("Let's learn some Programming!")
+        console.log("-------------------")
+        programming();
+      }
+      if (answer.learnP == "Advanced learning") {
+        console.log("-------------------")
+        console.log("You need to complete Math/Spanish/Programming, to unlock Advanced learning.")
+        console.log("-------------------")
+        gameLoop();
+      }
+      if (answer.learnP == "Pro learning") {
+        console.log("-------------------")
+        console.log("You need to complete the Advanced learning first!")
+        console.log("-------------------")
+        gameLoop();
+      }
+    })
 }
 
 function sleep () {
-
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "sleepP",
+        message: "For how long do you want to sleep?",
+        choices: ["1 hour", "3 hours", "8 hours", "12 hours"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.sleepP == "1 hour") {
+        console.log("-------------------")
+        console.log("Oh-no! I want to sleep more!")
+        console.log("-------------------")
+        health -= 15;
+        happiness -= 25;
+        console.log(`Health: -15`);
+        console.log(`Happiness: -25`);
+        console.log("-------------------")
+      }
+      if (answer.sleepP == "3 hours") {
+        console.log("-------------------")
+        console.log("I'm still sleepy.... :(")
+        console.log("-------------------")
+        health -= 10;
+        happiness -= 15;
+        console.log(`Health: -10`);
+        console.log(`Happiness: -15`);
+        console.log("-------------------")
+      }
+      if (answer.sleepP == "8 hours") {
+        console.log("-------------------")
+        console.log("Thank you! I am feeling much better! :)")
+        console.log("-------------------")
+        health += 25;
+        happiness += 25;
+        console.log(`Health: +25`);
+        console.log(`Happiness: +25`);
+        console.log("-------------------")
+      }
+      if (answer.sleepP == "12 hours") {
+        console.log("-------------------")
+        console.log("I sleeped to much! I am still sleepy! :/")
+        console.log("-------------------")
+        number1 = Math.floor(Math.random()*20);
+        number2 = Math.floor(Math.random()*10);
+        health += number1;
+        happiness += number2;
+        console.log(`Health: +${number1}`);
+        console.log(`Happiness: +${number2}`);
+        console.log("-------------------")
+      }
+    })
+    .then(() => gameLoop())
 }
 
 function bath () {
-
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "bathP",
+        message: "Where would you like to take the bath?",
+        choices: ["Lake", "River", "Sea", "In your house"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.bathP == "Lake") {
+        console.log("-------------------")
+        console.log("I am really enjoyed the Lake.")
+        console.log("-------------------")
+        health += 15;
+        happiness += 25;
+        console.log(`Health: +15`);
+        console.log(`Happiness: +25`);
+        console.log("-------------------")
+      }
+      if (answer.bathP == "River") {
+        console.log("-------------------")
+        console.log("Oh-noo! You were bitten by a Black Piranha.")
+        console.log("-------------------")
+        health -= 20;
+        happiness -= 20;
+        console.log(`Health: -20`);
+        console.log(`Happiness: -20`);
+        console.log("-------------------")
+      }
+      if (answer.bathP == "Sea") {
+        console.log("-------------------")
+        console.log("That was very refreshing! :)")
+        console.log("-------------------")
+        health += 25;
+        happiness += 25;
+        console.log(`Health: +25`);
+        console.log(`Happiness: +25`);
+        console.log("-------------------")
+      }
+      if (answer.bathP == "In your house") {
+        console.log("-------------------")
+        console.log("Oh-noo! You haven't got a house yet! :/")
+        console.log("-------------------")
+        number1 = Math.floor(Math.random()*20);
+        number2 = Math.floor(Math.random()*20);
+        health -= number1;
+        happiness -= number2;
+        console.log(`Health: -${number1}`);
+        console.log(`Happiness: -${number2}`);
+        console.log("-------------------")
+      }
+    })
+    .then(() => gameLoop())
 }
 
 function skills() {
@@ -197,10 +539,14 @@ function skills() {
   }
   
   const bite = () => {
-    health -= 10;
-    happiness += 25;
-    attack += 10;
-    defense -= 10;
+    bite1 = Math.floor(Math.random()*10);
+    bite2 = Math.floor(Math.random()*25);
+    bite3 = Math.floor(Math.random()*10);
+    bite4 = Math.floor(Math.random()*10);
+    health -= bite1;
+    happiness += bite2;
+    attack += bite3;
+    defense -= bite4;
   }
   inquirer
     .prompt([
@@ -244,20 +590,20 @@ function skills() {
           console.log(">Meditate< has been used!")
           console.log("-------------------")
           meditate();
-          console.log(`Health: ${this.med1}`);
-          console.log(`Happiness: ${thismed2}`);
-          console.log(`Attack: -10`);
-          console.log(`Defense: -35`);
+          console.log(`Health: +${this.med1}`);
+          console.log(`Happiness: +${this.med2}`);
+          console.log(`Attack: -${this.med3}`);
+          console.log(`Defense: -${this.med4}`);
           console.log("-------------------")
         } else {
           console.log("-------------------")
           console.log(">Bite< has been used!")
           console.log("-------------------")
-          console.log(`Health: -10`);
-          console.log(`Happiness: +25`);
-          console.log(`Attack: +10`);
-          console.log(`Defense: -10`);
           bite();
+          console.log(`Health: -${this.bite1}`);
+          console.log(`Happiness: +${this.bite2}`);
+          console.log(`Attack: +${this.bite3}`);
+          console.log(`Defense: -${this.bite4}`);
           console.log("-------------------")
         }
       } else {
@@ -525,6 +871,7 @@ const status = () => {
 }
 
 const gameLoop = () => {
+  time();
   inquirer
     .prompt([
       {
