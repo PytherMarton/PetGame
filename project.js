@@ -659,7 +659,9 @@ function play () {
     .then(() => gameLoop())
   }
   translatorGame = () => {
-    
+    console.log("You need to learn foreign languages to unlock this game.")
+    console.log("You can learn new languages in the 'Learn' section.")
+    gameLoop();
   }
   inquirer
     .prompt([
