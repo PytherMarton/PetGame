@@ -1032,4 +1032,28 @@ const gameLoop = () => {
     })
 }
 
-init();
+// init();
+
+module.exports = {
+  name: "project.js",
+  desc: "Full game",
+  time,
+  timeReverse,
+  statusOption,
+  eat,
+  drink,
+  play,
+  hunt,
+  learn,
+  sleep,
+  bath,
+  skills,
+  Pet,
+  Unicorn,
+  Seahorse,
+  Tiger,
+  init,
+  petBuild,
+  status,
+  gameLoop,
+}
