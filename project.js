@@ -172,8 +172,280 @@ function drink () {
 }
 
 function play () {
-  health = health +12;
-  happiness = happiness +7;
+  quiz = () => {
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "quiz1P",
+        message: "What is the capital of England?",
+        choices: ["Manchaster", "Liverpool", "York", "London"],
+      },
+      {
+        type: "list",
+        name: "quiz2P",
+        message: "What is heavier?",
+        choices: ["1kg of Iron", "1kg of Feather", "1kg of Coffee", "They are the same weight."],
+      },
+      {
+        type: "list",
+        name: "quiz3P",
+        message: "Where you can't watch a movie?",
+        choices: ["Cinema", "Nokia 3220", "Laptop", "TV"],
+      },
+      {
+        type: "list",
+        name: "quiz4P",
+        message: "What colour is the Polar Bear skin?",
+        choices: ["Black", "White", "Brown", "Purple"],
+      },
+      {
+        type: "list",
+        name: "quiz5P",
+        message: "Which statement is true??",
+        choices: ["The coffee is purple.", "The Polar Bear skin is black.", "You can watch a movie on a Nokia 3220.", "None of them are true."],
+      },
+      {
+        type: "list",
+        name: "quiz6P",
+        message: "What is Pi equal to?",
+        choices: ["3.1415926535", "3.1592874631", "3.2093763192", "4.1928374511"],
+      },
+      {
+        type: "list",
+        name: "quiz7P",
+        message: "Who is the CEO of Code Nation?",
+        choices: ["Peter Marton", "David Muir", "Chuck Norris", "Ben Maudslay"],
+      },
+      {
+        type: "list",
+        name: "quiz8P",
+        message: "Usain Bolt is the faster man on the Earth. What speed did he reached?",
+        choices: ["75.10 km/h (46.66 mp/h)", "30.18 km/h (18.75 mp/h)", "43.99 km/h (27.33 mp/h)", "56.24 km/h (34.94 mp/h)"],
+      },
+      {
+        type: "list",
+        name: "quiz9P",
+        message: "Gordon Ramsay is famous for?",
+        choices: ["Boxing", "Cycling", "Cooking", "He is not famous."],
+      },
+      {
+        type: "list",
+        name: "quiz10P",
+        message: "What was first? The Chicken or the Egg?",
+        choices: ["Chicken", "Egg", "No idea"],
+      },
+    ])
+    .then((answers) => {
+      if (answers.quiz1P == "London"){
+        console.log("-------------------")
+        console.log("Your answer 'London' for the 1th question was correct.")
+        timeReverse();
+        console.log("Health: +1;")
+        console.log("Happiness: +1;")
+        console.log("Attack: +1;")
+        console.log("Defense: +1;")
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 1th question was incorrect.")
+        time ();
+        console.log("Health: -1;")
+        console.log("Happiness: -1;")
+        console.log("Attack: -1;")
+        console.log("Defense: -1;")
+      }
+      if (answers.quiz2P == "They are the same weight."){
+        console.log("-------------------")
+        console.log("Your answer 'They are the same weight.' for the 2nd question was correct.")
+        timeReverse();
+        console.log("Health: +1;")
+        console.log("Happiness: +1;")
+        console.log("Attack: +1;")
+        console.log("Defense: +1;")
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 2nd question was incorrect.")
+        time ();
+        console.log("Health: -1;")
+        console.log("Happiness: -1;")
+        console.log("Attack: -1;")
+        console.log("Defense: -1;")
+      }
+      if (answers.quiz3P == "Nokia 3220"){
+        console.log("-------------------")
+        console.log("Your answer 'Nokia 3220' for the 3rd question was correct.")
+        timeReverse();
+        console.log("Health: +1;")
+        console.log("Happiness: +1;")
+        console.log("Attack: +1;")
+        console.log("Defense: +1;")
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 3rd question was incorrect.")
+        time ();
+        console.log("Health: -1;")
+        console.log("Happiness: -1;")
+        console.log("Attack: -1;")
+        console.log("Defense: -1;")
+      }
+      if (answers.quiz4P == "Black"){
+        console.log("-------------------")
+        console.log("Your answer 'Black' for the 4th question was correct.")
+        timeReverse();
+        console.log("Health: +1;")
+        console.log("Happiness: +1;")
+        console.log("Attack: +1;")
+        console.log("Defense: +1;")
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 4th question was incorrect.")
+        time ();
+        console.log("Health: -1;")
+        console.log("Happiness: -1;")
+        console.log("Attack: -1;")
+        console.log("Defense: -1;")
+      }
+      if (answers.quiz5P == "The Polar Bear skin is black."){
+        console.log("-------------------")
+        console.log("Your answer 'The Polar Bear skin is black.' for the 5th question was correct.")
+        timeReverse();
+        console.log("Health: +1;")
+        console.log("Happiness: +1;")
+        console.log("Attack: +1;")
+        console.log("Defense: +1;")
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 5th question was incorrect.")
+        time ();
+        console.log("Health: -1;")
+        console.log("Happiness: -1;")
+        console.log("Attack: -1;")
+        console.log("Defense: -1;")
+      }
+      if (answers.quiz6P == "3.1415926535"){
+        console.log("-------------------")
+        console.log("Your answer '3.1415926535' for the 6th question was correct.")
+        timeReverse();
+        console.log("Health: +1;")
+        console.log("Happiness: +1;")
+        console.log("Attack: +1;")
+        console.log("Defense: +1;")
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 6th question was incorrect.")
+        time ();
+        console.log("Health: -1;")
+        console.log("Happiness: -1;")
+        console.log("Attack: -1;")
+        console.log("Defense: -1;")
+      }
+      if (answers.quiz7P == "David Muir"){
+        console.log("-------------------")
+        console.log("Your answer 'David Muir' for the 7th question was correct.")
+        timeReverse();
+        console.log("Health: +1;")
+        console.log("Happiness: +1;")
+        console.log("Attack: +1;")
+        console.log("Defense: +1;")
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 7th question was incorrect.")
+        time ();
+        console.log("Health: -1;")
+        console.log("Happiness: -1;")
+        console.log("Attack: -1;")
+        console.log("Defense: -1;")
+      }
+      if (answers.quiz8P == "43.99 km/h (27.33 mp/h)"){
+        console.log("-------------------")
+        console.log("Your answer '43.99 km/h (27.33 mp/h)' for the 8th question was correct.")
+        timeReverse();
+        console.log("Health: +1;")
+        console.log("Happiness: +1;")
+        console.log("Attack: +1;")
+        console.log("Defense: +1;")
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 8th question was incorrect.")
+        time ();
+        console.log("Health: -1;")
+        console.log("Happiness: -1;")
+        console.log("Attack: -1;")
+        console.log("Defense: -1;")
+      }
+      if (answers.quiz9P == "Cooking"){
+        console.log("-------------------")
+        console.log("Your answer 'Cooking' for the 9th question was correct.")
+        timeReverse();
+        console.log("Health: +1;")
+        console.log("Happiness: +1;")
+        console.log("Attack: +1;")
+        console.log("Defense: +1;")
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 9th question was incorrect.")
+        time ();
+        console.log("Health: -1;")
+        console.log("Happiness: -1;")
+        console.log("Attack: -1;")
+        console.log("Defense: -1;")
+      }
+      if (answers.quiz10P == "No idea"){
+        console.log("-------------------")
+        console.log("Your answer 'No idea' for the 10th question was correct.")
+        timeReverse();
+        console.log("Health: +1;")
+        console.log("Happiness: +1;")
+        console.log("Attack: +1;")
+        console.log("Defense: +1;")
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 10th question was incorrect.")
+        time ();
+        console.log("Health: -1;")
+        console.log("Happiness: -1;")
+        console.log("Attack: -1;")
+        console.log("Defense: -1;")
+      }
+    })
+    .then(() => gameLoop())
+  }
+  mathGame = () => {
+    
+  }
+  translatorGame = () => {
+    
+  }
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "playP",
+        message: "What would you like to play?",
+        choices: ["Quiz", "Math Game", "Translator Game"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.playP == "Quiz") {
+        console.log("-------------------")
+        console.log("Good choice! Lets answer some questions! :)")
+        console.log("-------------------")
+        quiz();
+      }
+      if (answer.playP == "Math Game") {
+        console.log("-------------------")
+        console.log("Prepare your brain!")
+        console.log("If you find it hard, go to learn, and come back later!")
+        console.log("-------------------")
+        mathGame();
+      }
+      if (answer.playP == "Translator Game") {
+        console.log("-------------------")
+        console.log("Let's see what do you know about languages!")
+        console.log("-------------------")
+        translatorGame();
+      }
+    })
 }
 
 function hunt () {
