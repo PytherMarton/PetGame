@@ -411,7 +411,252 @@ function play () {
     .then(() => gameLoop())
   }
   mathGame = () => {
-    
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "math1P",
+        message: "What is 1 + 7 equal to?",
+        choices: ["7", "1", "8", "0"],
+      },
+      {
+        type: "list",
+        name: "math2P",
+        message: "What is 16 + 61 equal to?",
+        choices: ["16", "61", "76", "77"],
+      },
+      {
+        type: "list",
+        name: "math3P",
+        message: "What is 10 - 6 equal to?",
+        choices: ["0", "4", "8", "12"],
+      },
+      {
+        type: "list",
+        name: "math4P",
+        message: "What is 54 - 42 equal to?",
+        choices: ["96", "12", "32", "7"],
+      },
+      {
+        type: "list",
+        name: "math5P",
+        message: "What is 1 * 7 equal to?",
+        choices: ["7", "14", "21", "28"],
+      },
+      {
+        type: "list",
+        name: "math6P",
+        message: "What is 7 * 8 equal to?",
+        choices: ["40", "56", "62", "1"],
+      },
+      {
+        type: "list",
+        name: "math7P",
+        message: "What is 9 / 1 equal to?",
+        choices: ["7", "1", "8", "9"],
+      },
+      {
+        type: "list",
+        name: "math8P",
+        message: "What is 90 / 10 equal to?",
+        choices: ["1", "10", "9", "19"],
+      },
+      {
+        type: "list",
+        name: "math9P",
+        message: "What is 142857 * 3 equal to?",
+        choices: ["285714", "857142", "428571", "3"],
+      },
+      {
+        type: "list",
+        name: "math10P",
+        message: "What is Pi * Pi equal to?",
+        choices: ["9.86", "8.69", "6.86", "9.68"],
+      },
+    ])
+    .then((answers) => {
+      if (answers.math1P == "8"){
+        console.log("-------------------")
+        console.log("Your answer '8' for the 1th question was correct.")
+        randomMath1 = Math.floor(Math.random()*2);
+        attack += randomMath1;
+        defense += randomMath1;
+        console.log(`Attack: +${randomMath1}`)
+        console.log(`Defense: +${randomMath1}`)
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 1th question was incorrect.")
+        randomMath1 = Math.floor(Math.random()*2);
+        attack -= randomMath1;
+        defense -= randomMath1;
+        console.log(`Attack: -${randomMath1}`)
+        console.log(`Defense: -${randomMath1}`)
+       
+      }
+      if (answers.math2P == "77"){
+        console.log("-------------------")
+        console.log("Your answer '77' for the 2nd question was correct.")
+        randomMath2 = Math.floor(Math.random()*3);
+        attack += randomMath2;
+        defense += randomMath2;
+        console.log(`Attack: +${randomMath2}`)
+        console.log(`Defense: +${randomMath2}`)
+       
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 2nd question was incorrect.")
+        randomMath2 = Math.floor(Math.random()*3);
+        attack -= randomMath2;
+        defense -= randomMath2;
+        console.log(`Attack: -${randomMath2}`)
+        console.log(`Defense: -${randomMath2}`)
+      }
+      if (answers.math3P == "4"){
+        console.log("-------------------")
+        console.log("Your answer '4' for the 3rd question was correct.")
+        randomMath3 = Math.floor(Math.random()*4);
+        attack += randomMath3;
+        defense += randomMath3;
+        console.log(`Attack: +${randomMath3}`)
+        console.log(`Defense: +${randomMath3}`)
+      
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 3rd question was incorrect.")
+        randomMath3 = Math.floor(Math.random()*4);
+        attack -= randomMath3;
+        defense -= randomMath3;
+        console.log(`Attack: -${randomMath3}`)
+        console.log(`Defense: -${randomMath3}`)
+      }
+      if (answers.math4P == "12"){
+        console.log("-------------------")
+        console.log("Your answer '12' for the 4th question was correct.")
+        randomMath4 = Math.floor(Math.random()*5);
+        attack += randomMath4;
+        defense += randomMath4;
+        console.log(`Attack: +${randomMath4}`)
+        console.log(`Defense: +${randomMath4}`)
+      
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 4th question was incorrect.")
+        randomMath4 = Math.floor(Math.random()*5);
+        attack -= randomMath4;
+        defense -= randomMath4;
+        console.log(`Attack: -${randomMath4}`)
+        console.log(`Defense: -${randomMath4}`)
+      }
+      if (answers.math5P == "7"){
+        console.log("-------------------")
+        console.log("Your answer '7' for the 5th question was correct.")
+        randomMath5 = Math.floor(Math.random()*6);
+        attack += randomMath5;
+        defense += randomMath5;
+        console.log(`Attack: +${randomMath5}`)
+        console.log(`Defense: +${randomMath5}`)
+      
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 5th question was incorrect.")
+        randomMath5 = Math.floor(Math.random()*6);
+        attack -= randomMath5;
+        defense -= randomMath5;
+        console.log(`Attack: -${randomMath5}`)
+        console.log(`Defense: -${randomMath5}`)
+      }
+      if (answers.math6P == "56"){
+        console.log("-------------------")
+        console.log("Your answer '56' for the 6th question was correct.")
+        randomMath6 = Math.floor(Math.random()*7);
+        attack += randomMath6;
+        defense += randomMath6;
+        console.log(`Attack: +${randomMath6}`)
+        console.log(`Defense: +${randomMath6}`)
+      
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 6th question was incorrect.")
+        randomMath6 = Math.floor(Math.random()*7);
+        attack -= randomMath6;
+        defense -= randomMath6;
+        console.log(`Attack: -${randomMath6}`)
+        console.log(`Defense: -${andomMath6}`)
+      }
+      if (answers.math7P == "9"){
+        console.log("-------------------")
+        console.log("Your answer '9' for the 7th question was correct.")
+        randomMath7 = Math.floor(Math.random()*8);
+        attack += randomMath7;
+        defense += randomMath7;
+        console.log(`Attack: +${randomMath7}`)
+        console.log(`Defense: +${randomMath7}`)
+      
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 7th question was incorrect.")
+        randomMath7 = Math.floor(Math.random()*8);
+        attack -= randomMath7;
+        defense -= randomMath7;
+        console.log(`Attack: -${randomMath7}`)
+        console.log(`Defense: -${randomMath7}`)
+      }
+      if (answers.math8P == "9"){
+        console.log("-------------------")
+        console.log("Your answer '9' for the 8th question was correct.")
+        randomMath8 = Math.floor(Math.random()*9);
+        attack += randomMath8;
+        defense += randomMath8;
+        console.log(`Attack: +${randomMath8}`)
+        console.log(`Defense: +${randomMath8}`)
+      
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 8th question was incorrect.")
+        randomMath8= Math.floor(Math.random()*9);
+        attack -= randomMath8;
+        defense -= randomMath8;
+        console.log(`Attack: -${randomMath8}`)
+        console.log(`Defense: -${randomMath8}`)
+      }
+      if (answers.math9P == "428571"){
+        console.log("-------------------")
+        console.log("Your answer '428571' for the 9th question was correct.")
+        randomMath9 = Math.floor(Math.random()*10);
+        attack += randomMath9;
+        defense += randomMath9;
+        console.log(`Attack: +${randomMath9}`)
+        console.log(`Defense: +${randomMath9}`)
+       
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 9th question was incorrect.")
+        randomMath9 = Math.floor(Math.random()*10);
+        attack -= randomMath9;
+        defense -= randomMath9;
+        console.log(`Attack: -${randomMath9}`)
+        console.log(`Defense: -${randomMath9}`)
+      }
+      if (answers.math10P == "9.86"){
+        console.log("-------------------")
+        console.log("Your answer '9.86' for the 10th question was correct.")
+        randomMath10 = Math.floor(Math.random()*11);
+        attack += randomMath10;
+        defense += randomMath10;
+        console.log(`Attack: +${randomMath10}`)
+        console.log(`Defense: +${randomMath10}`)
+
+      } else {
+        console.log("-------------------")
+        console.log("Your answer for the 10th question was incorrect.")
+        randomMath10 = Math.floor(Math.random()*11);
+        attack -= randomMath10;
+        defense -= randomMath10;
+        console.log(`Attack: -${randomMath10}`)
+        console.log(`Defense: -${randomMath10}`)
+      }
+    })
+    .then(() => gameLoop())
   }
   translatorGame = () => {
     
