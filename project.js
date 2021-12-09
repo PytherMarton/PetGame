@@ -388,7 +388,85 @@ function learn () {
     .then(() => gameLoop())
   }
   const programming = () => {
-
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "programmingP",
+        message: "What would you like to learn first??",
+        choices: ["HTML", "CSS", "JavaScript"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.programmingP == "HTML") {
+        console.log("-------------------")
+        console.log("Learn how to write a basic HTML page!")
+        console.log("-------------------")
+        console.log("<!DOCTYPE html>")
+        console.log("<html>")
+        console.log("<body>")
+        console.log("")
+        console.log("<h1>My First Heading</h1>")
+        console.log("<p>My first paragraph.</p>")
+        console.log("")
+        console.log("</body>")
+        console.log("</html>")
+        console.log("-------------------")
+        timeReverse();
+        console.log(`Health: +1`);
+        console.log(`Happiness: +1`);
+        console.log(`Attack: +1`);
+        console.log(`Defense: +1`);
+        console.log("-------------------")
+      }
+      if (answer.programmingP == "CSS") {
+        console.log("-------------------")
+        console.log("Let's learn some basic CSS!")
+        console.log("-------------------")
+        console.log("body {")
+        console.log("  background-color: lightblue;")
+        console.log("}")
+        console.log("")
+        console.log("h1 {")
+        console.log("  color: white;")
+        console.log("  text-align: center;")
+        console.log("}")
+        console.log("")
+        console.log("p {")
+        console.log("font-family: verdana;")
+        console.log("font-size: 20px;")
+        console.log("}")
+        console.log("-------------------")
+        timeReverse();
+        timeReverse();
+        console.log(`Health: +2`);
+        console.log(`Happiness: +2`);
+        console.log(`Attack: +2`);
+        console.log(`Defense: +2`);
+        console.log("-------------------")
+      }
+      if (answer.programmingP == "Javascript") {
+        console.log("-------------------")
+        console.log("Let's learn basic Javascript statement!")
+        console.log("-------------------")
+        console.log("let x, y, z;  // Statement 1")
+        console.log("x = 5;        // Statement 2")
+        console.log("y = 6;        // Statement 3")
+        console.log("z = x + y;    // Statement 4")
+        console.log("document.getElementById.innerHTML =")
+        console.log("The value of z is " + z + ".")
+        console.log("-------------------")
+        timeReverse();
+        timeReverse();
+        timeReverse();
+        console.log(`Health: +3`);
+        console.log(`Happiness: +3`);
+        console.log(`Attack: +3`);
+        console.log(`Defense: +3`);
+        console.log("-------------------")
+      }
+    })
+    .then(() => gameLoop())
   }
   inquirer
     .prompt([
