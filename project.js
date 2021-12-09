@@ -1325,8 +1325,9 @@ function sleep () {
         console.log("-------------------")
         health -= 15;
         happiness -= 25;
-        console.log(`Health: -15`);
-        console.log(`Happiness: -25`);
+        console.log(`Health:`.black.bgWhite, `-15`.red.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `-25`.red.bgBlack);
         console.log("-------------------")
       }
       if (answer.sleepP == "3 hours") {
@@ -1335,8 +1336,9 @@ function sleep () {
         console.log("-------------------")
         health -= 10;
         happiness -= 15;
-        console.log(`Health: -10`);
-        console.log(`Happiness: -15`);
+        console.log(`Health:`.black.bgWhite, `-10`.red.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `-15`.red.bgBlack);
         console.log("-------------------")
       }
       if (answer.sleepP == "8 hours") {
@@ -1345,8 +1347,9 @@ function sleep () {
         console.log("-------------------")
         health += 25;
         happiness += 25;
-        console.log(`Health: +25`);
-        console.log(`Happiness: +25`);
+        console.log(`Health:`.black.bgWhite, `+25`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+25`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.sleepP == "12 hours") {
@@ -1357,8 +1360,9 @@ function sleep () {
         number2 = Math.floor(Math.random()*10);
         health += number1;
         happiness += number2;
-        console.log(`Health: +${number1}`);
-        console.log(`Happiness: +${number2}`);
+        console.log(`Health:`.black.bgWhite, `+${number1}`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+${number2}`.green.bgBlack);
         console.log("-------------------")
       }
     })
@@ -1382,8 +1386,9 @@ function bath () {
         console.log("-------------------")
         health += 15;
         happiness += 25;
-        console.log(`Health: +15`);
-        console.log(`Happiness: +25`);
+        console.log(`Health:`.black.bgWhite, `+15`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+25`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.bathP == "River") {
@@ -1392,8 +1397,9 @@ function bath () {
         console.log("-------------------")
         health -= 20;
         happiness -= 20;
-        console.log(`Health: -20`);
-        console.log(`Happiness: -20`);
+        console.log(`Health:`.black.bgWhite, `-20`.red.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `-20`.red.bgBlack);
         console.log("-------------------")
       }
       if (answer.bathP == "Sea") {
@@ -1402,8 +1408,9 @@ function bath () {
         console.log("-------------------")
         health += 25;
         happiness += 25;
-        console.log(`Health: +25`);
-        console.log(`Happiness: +25`);
+        console.log(`Health:`.black.bgWhite, `+25`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+25`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.bathP == "In your house") {
@@ -1414,8 +1421,9 @@ function bath () {
         number2 = Math.floor(Math.random()*20);
         health -= number1;
         happiness -= number2;
-        console.log(`Health: -${number1}`);
-        console.log(`Happiness: -${number2}`);
+        console.log(`Health:`.black.bgWhite, `-${number1}`.red.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `-${number2}`.red.bgBlack);
         console.log("-------------------")
       }
     })
@@ -1472,24 +1480,27 @@ function skills() {
           console.log("-------------------")
           magic();
           if (num1 < 0){
-            console.log(`Health: ${this.num1}`);
+            console.log(`Health:`.black.bgWhite, `${this.num1}`.red.bgBlack);
           } else {
-            console.log(`Health: +${this.num1}`);
+            console.log(`Health:`.black.bgWhite, `+${this.num1}`.green.bgBlack);
           }
+          console.log("-------------------")
           if (num2 < 0){
-            console.log(`Happiness: ${this.num2}`);
+            console.log(`Happiness:`.black.bgWhite, `${this.num2}`.red.bgBlack);
           } else {
-            console.log(`Happiness: +${this.num2}`);
+            console.log(`Happiness:`.black.bgWhite, `+${this.num2}`.green.bgBlack);
           }
+          console.log("-------------------")
           if (num3 < 0){
-            console.log(`Attack: ${this.num3}`);
+            console.log(`Attack:`.black.bgWhite, `${this.num3}`.red.bgBlack);
           } else {
-            console.log(`Attack: +${this.num3}`);
+            console.log(`Attack:`.black.bgWhite, `+${this.num3}`.green.bgBlack);
           }
+          console.log("-------------------")
           if (num4 < 0){
-            console.log(`Defense: ${this.num4}`);
+            console.log(`Defense:`.black.bgWhite, `${this.num4}`.red.bgBlack);
           } else {
-            console.log(`Defense: +${this.num4}`);
+            console.log(`Defense:`.black.bgWhite, `+${this.num4}`.green.bgBlack);
           }
           console.log("-------------------")
         } else if (pet.skill == "Meditate") {
@@ -1497,20 +1508,26 @@ function skills() {
           console.log(">Meditate< has been used!")
           console.log("-------------------")
           meditate();
-          console.log(`Health: +${this.med1}`);
-          console.log(`Happiness: +${this.med2}`);
-          console.log(`Attack: -${this.med3}`);
-          console.log(`Defense: -${this.med4}`);
+          console.log(`Health:`.black.bgWhite, `+${this.med1}`.green.bgBlack);
+          console.log("-------------------")
+          console.log(`Happiness:`.black.bgWhite, `+${this.med2}`.green.bgBlack);
+          console.log("-------------------")
+          console.log(`Attack:`.black.bgWhite, `-${this.med3}`.red.bgBlack);
+          console.log("-------------------")
+          console.log(`Defense:`.black.bgWhite, `-${this.med4}`.red.bgBlack);
           console.log("-------------------")
         } else {
           console.log("-------------------")
           console.log(">Bite< has been used!")
           console.log("-------------------")
           bite();
-          console.log(`Health: -${this.bite1}`);
-          console.log(`Happiness: +${this.bite2}`);
-          console.log(`Attack: +${this.bite3}`);
-          console.log(`Defense: -${this.bite4}`);
+          console.log(`Health:`.black.bgWhite, `-${this.bite1}`.red.bgBlack);
+          console.log("-------------------")
+          console.log(`Happiness:`.black.bgWhite, `+${this.bite2}`.green.bgBlack);
+          console.log("-------------------")
+          console.log(`Attack:`.black.bgWhite, `+${this.bite3}`.green.bgBlack);
+          console.log("-------------------")
+          console.log(`Defense:`.black.bgWhite, `-${this.bite4}`.red.bgBlack);
           console.log("-------------------")
         }
       } else {
