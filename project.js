@@ -1,9 +1,15 @@
+const { shark } = require("cli-spinners");
 const inquirer = require("inquirer");
 
 health = 100;
 happiness = 100;
 attack = 100;
 defense = 100;
+
+function theEnd(){
+  console.log("Your Pet Died :((((");
+  console.log("THE END")
+}
 
 function time () {
   health -= 1;
@@ -171,8 +177,169 @@ function play () {
 }
 
 function hunt () {
-  health = health +12;
-  happiness = happiness +7;
+  const babyE = () => {
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "babyElephantP",
+        message: "Are you sure, that you want to attack the Baby Elephant?",
+        choices: ["Yes", "No"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.babyElephantP == "Yes") {
+        console.log("-------------------")
+        console.log("The Mother of the Baby Elephant suddenly apperead, and you almost died!")
+        console.log("-------------------")
+        health = 50;
+        happiness = 50;
+        attack = 50;
+        defense = 50;
+        console.log ("Check your Status, to see if you survived or not.")
+        console.log("-------------------")
+      }
+    })
+    .then(() => gameLoop())
+  } 
+  const shark = () => {
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "sharkP",
+        message: "Are you sure, that you want to attack the Shark?",
+        choices: ["Yes", "No"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.sharkP == "Yes") {
+        console.log("-------------------")
+        if (attack >= 50 || defense >= 50){
+          console.log("Your attack was successfull! :)")
+          console.log("-------------------")
+          health += 30;
+          happiness +30;
+          console.log("Health: +30")
+          console.log("Happiness: +30")
+          gameLoop();
+        } else {
+          console.log("Your Attack or Defense was too low.")
+          console.log("Your attack is failed.")
+          console.log("-------------------")
+          health -= 10;
+          happiness -= 10;
+          console.log("Health: -10")
+          console.log("Happiness: -10")
+          console.log("-------------------")
+          if (health <= 0 || happiness <= 0){
+            theEnd();
+          } else{
+            gameLoop();
+          }
+        }
+      }
+    })
+  }
+  const dragon = () => {
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "dragonP",
+        message: "Are you sure, that you want to attack the Dragon?",
+        choices: ["Yes", "No"],
+      },
+    ])
+    .then((answer) => {
+      if (attack < 100 || defense < 100){
+        console.log("You Attack or Defense is too low.")
+        console.log("Try to improve them, and come back later!")
+        gameLoop();
+      } else if (answer.dragonP == "Yes") {
+        console.log("-------------------")
+        console.log("A magician appeared, and turned the Dragon into a Fly.")
+        console.log("You defeated the 'Dragon'.")
+        console.log("-------------------")
+        health += 15;
+        happiness += 15;
+        console.log("Health: +15")
+        console.log("Happiness: +15")
+        console.log("-------------------")
+        gameLoop();
+      } else {
+        gameLoop();
+      }
+    })
+  }
+  const alienAi = () => {
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "alienAiP",
+        message: "Alien Ai is the strongest creature in the world. Are you still wan't to attack?",
+        choices: ["Yes", "No"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.alienAiP == "Yes") {
+        if ( attack >= 150 && attack <= 190) {
+          console.log("Well done!! You defeated the Alien Ai.")
+          health = 200;
+          happiness = 200;
+          attack = 200;
+          defense = 200;
+          console.log("All your Status level went up to 200! :)")
+          gameLoop();
+        } else if (attack >= 191) {
+          console.log("You are brave, but you are exhausted.")
+          console.log("Come back later!")
+          gameLoop();
+        } else {
+          console.log("I told you, the Alien Ai is very strong!")
+          theEnd();
+        }
+      } else {
+        gameLoop();
+      }
+    })
+  }
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "huntP",
+        message: "Which creature do you want to attack?",
+        choices: ["Baby Elephant", "Shark", "Dragon", "Alien Ai"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.huntP == "Baby Elephant") {
+        console.log("-------------------")
+        console.log("Please don't kill me. I wan't to grow up!")
+        console.log("-------------------")
+        babyE();
+      }
+      if (answer.huntP == "Shark") {
+        console.log("-------------------")
+        console.log("Dont' you dare attacking me!")
+        console.log("-------------------")
+        shark();
+      }
+      if (answer.huntP == "Dragon") {
+        console.log("-------------------")
+        console.log("Are you not afraid of Fire?")
+        console.log("-------------------")
+        dragon();
+      }
+      if (answer.huntP == "Alien Ai") {
+        console.log("-------------------")
+        console.log("Don't play with Aline Ai, they are way stronger than you!!!")
+        console.log("-------------------")
+        alienAi();
+      }
+    })
 }
 
 function learn () {
@@ -982,6 +1149,17 @@ const status = () => {
 }
 
 const gameLoop = () => {
+  if (health <= 0 || happiness <= 0){
+    theEnd();
+  }
+  if (health >= 201 || happiness >= 201){
+    health = 200;
+    happiness = 200;
+  }
+  if (attack >= 201 || defense >= 201){
+    attack = 200;
+    happiness = 200;
+  }
   time();
   inquirer
     .prompt([
@@ -1032,11 +1210,10 @@ const gameLoop = () => {
     })
 }
 
-// init();
-
 module.exports = {
   name: "project.js",
   desc: "Full game",
+  theEnd,
   time,
   timeReverse,
   statusOption,
