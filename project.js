@@ -469,6 +469,7 @@ function play () {
         console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
         console.log("-------------------")
         console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
       }
     })
     .then(() => gameLoop())
@@ -737,6 +738,7 @@ function play () {
         console.log(`Attack:`.black.bgWhite, `-${randomMath10}`.red.bgBlack)
         console.log("-------------------")
         console.log(`Defense:`.black.bgWhite, `-${randomMath10}`.red.bgBlack)
+        console.log("-------------------")
       }
     })
     .then(() => gameLoop())
@@ -744,6 +746,7 @@ function play () {
   translatorGame = () => {
     console.log("You need to learn foreign languages to unlock this game.")
     console.log("You can learn new languages in the 'Learn' section.")
+    console.log("-------------------")
     gameLoop();
   }
   inquirer
@@ -798,7 +801,7 @@ function hunt () {
         happiness = 50;
         attack = 50;
         defense = 50;
-        console.log ("Check your Status, to see if you survived or not.")
+        console.log (`All your status went down to 50 :/`.red.bgBlack)
         console.log("-------------------")
       }
     })
@@ -1706,9 +1709,11 @@ const init = () => {
     .then((answer) => {
       console.log(`Welcome ${answer.name}!`)
     })
-    .then(() => petBuild())
-    .catch((error) => {
-      console.log(error)
+    .then(() => {
+      setTimeout(function() {
+        console.clear();
+        petBuild()
+      }, 3000);
     })
 }
 
@@ -1760,7 +1765,10 @@ const petBuild = () => {
         pet = new Tiger (`${answers.typeP}`, `${answers.nameP}`, `${answers.colourP}`, `${answers.genderP}`, `${answers.powerP}`, "Bite");
       }
     })
-    .then(() => status())
+    .then(() => {
+      console.clear();
+      status()
+    })
 }
 
 const status = () => {
@@ -1780,6 +1788,7 @@ const status = () => {
         console.log("-----------------------------------------------------------".black.bgWhite)
         console.log(`| Health: ${health} | Happiness: ${happiness} | Attack: ${attack} | Defense: ${defense} |`.black.bgWhite);
         console.log("-----------------------------------------------------------".black.bgWhite)
+        console.log("-------------------")
         console.log("Let's interact with your pet.")
         console.log("-------------------")
       } else {
@@ -1788,13 +1797,15 @@ const status = () => {
         console.log("-------------------")
       }
     })
-    .then(() => gameLoop())
+    .then(() => {
+      setTimeout(function() {
+        console.clear();
+        gameLoop()
+      }, 3000);
+    })
 }
 
 const gameLoop = () => {
-  if (health <= 0 || happiness <= 0){
-    theEnd();
-  }
   if (health >= 201 || happiness >= 201){
     health = 200;
     happiness = 200;
@@ -1802,8 +1813,11 @@ const gameLoop = () => {
   if (attack >= 201 || defense >= 201){
     attack = 200;
     happiness = 200;
-  }
-  time();
+  } 
+  if (health <= 0 || happiness <= 0){
+    theEnd();
+  } else {
+    time();
   inquirer
     .prompt([
       {
@@ -1814,6 +1828,7 @@ const gameLoop = () => {
       },
     ])
     .then((answer) => {
+      console.clear();
       if (answer.optionP == "> Check your Pet Status <"){
         console.log("-------------------");
         statusOption();
@@ -1851,6 +1866,7 @@ const gameLoop = () => {
         skills();
       }
     })
+  }
 }
 
 module.exports = {
