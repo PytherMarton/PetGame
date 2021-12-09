@@ -445,7 +445,7 @@ function learn () {
         console.log(`Defense: +2`);
         console.log("-------------------")
       }
-      if (answer.programmingP == "Javascript") {
+      if (answer.programmingP == "JavaScript") {
         console.log("-------------------")
         console.log("Let's learn basic Javascript statement!")
         console.log("-------------------")
@@ -454,7 +454,7 @@ function learn () {
         console.log("y = 6;        // Statement 3")
         console.log("z = x + y;    // Statement 4")
         console.log("document.getElementById.innerHTML =")
-        console.log("The value of z is " + z + ".")
+        console.log("The value of z is " + "z" + ".")
         console.log("-------------------")
         timeReverse();
         timeReverse();
