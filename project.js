@@ -41,13 +41,13 @@ function statusOption () {
       if (answer.statusOptionP == "Full status"){
         console.log("-------------------")
         console.log(pet);
-        console.log("--------------------------------------------------------------")
-        console.log("|",`Health: ${health}`.green ,"||", `Happiness: ${happiness}`.blue, "||", `Attack: ${attack}`.red, "||", `Defense: ${defense}`.magenta, "|");
-        console.log("--------------------------------------------------------------")
+        console.log("-----------------------------------------------------------".black.bgWhite)
+        console.log(`| Health: ${health} | Happiness: ${happiness} | Attack: ${attack} | Defense: ${defense} |`.black.bgWhite);
+        console.log("-----------------------------------------------------------".black.bgWhite)
       } else {
-        console.log("--------------------------------------------------------------")
-        console.log("|",`Health: ${health}`.green ,"||", `Happiness: ${happiness}`.blue, "||", `Attack: ${attack}`.red, "||", `Defense: ${defense}`.magenta, "|");
-        console.log("--------------------------------------------------------------")
+        console.log("-----------------------------------------------------------".black.bgWhite)
+        console.log(`| Health: ${health} | Happiness: ${happiness} | Attack: ${attack} | Defense: ${defense} |`.black.bgWhite);
+        console.log("-----------------------------------------------------------".black.bgWhite)
       }
     })
     .then(() => gameLoop())
@@ -70,8 +70,9 @@ function eat () {
         console.log("-------------------")
         health += 10;
         happiness += 10;
-        console.log(`Health: +10`.green);
-        console.log(`Happiness: +10`.blue);
+        console.log(`Health:`.black.bgWhite, `+10`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+10`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.eatP == "Cake") {
@@ -80,8 +81,9 @@ function eat () {
         console.log("-------------------")
         health -= 10;
         happiness += 20;
-        console.log(`Health:`.green, `-10`.red);
-        console.log(`Happiness: +20`.blue);
+        console.log(`Health:`.black.bgWhite, `-10`.red.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+20`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.eatP == "Big Mac") {
@@ -90,8 +92,9 @@ function eat () {
         console.log("-------------------")
         health -= 30;
         happiness += 30;
-        console.log(`Health:`.green, `-30`.red);
-        console.log(`Happiness: +30`.blue);
+        console.log(`Health:`.black.bgWhite, `-30`.red.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, ` +30`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.eatP == "Protein Bar") {
@@ -100,8 +103,9 @@ function eat () {
         console.log("-------------------")
         health += 20;
         happiness += 10;
-        console.log(`Health: +20`.green);
-        console.log(`Happiness: +10`.blue);
+        console.log(`Health:`.black.bgWhite, `+20`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+10`.green.bgBlack);
         console.log("-------------------")
       }
     })
@@ -126,8 +130,9 @@ function drink () {
         console.log("-------------------")
         health += 15;
         happiness += 15;
-        console.log(`Health: +15`.green);
-        console.log(`Happiness: +15`.blue);
+        console.log(`Health:`.black.bgWhite, `+15`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+15`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.drinkP == "Coffee") {
@@ -136,8 +141,9 @@ function drink () {
         console.log("-------------------")
         health -= 15;
         happiness += 15;
-        console.log(`Health:`.green, `-15`.red);
-        console.log(`Happiness: +15`.blue);
+        console.log(`Health:`.black.bgWhite, `-15`.red.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+15`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.drinkP == "Coke") {
@@ -146,8 +152,9 @@ function drink () {
         console.log("-------------------")
         health -= 40;
         happiness += 40;
-        console.log(`Health:`.green, `-30`.red);
-        console.log(`Happiness: +40`.blue);
+        console.log(`Health:`.black.bgWhite, `-30`.red.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+40`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.drinkP == "Magic Potion") {
@@ -158,8 +165,9 @@ function drink () {
         number2 = Math.floor(Math.random()*20);
         health += number1;
         happiness += number2;
-        console.log(`Health: +${number1}`.green);
-        console.log(`Happiness: +${number2}`.blue);
+        console.log(`Health:`.black.bgWhite, `+${number1}`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite,`+${number2}`.green.bgBlack);
         console.log("-------------------")
       }
     })
@@ -236,171 +244,231 @@ function play () {
         console.log("-------------------")
         console.log("Your answer 'London' for the 1th question was correct.")
         timeReverse();
-        console.log("Health: +1;")
-        console.log("Happiness: +1;")
-        console.log("Attack: +1;")
-        console.log("Defense: +1;")
+        console.log("Health:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "+1".green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 1th question was incorrect.")
         time ();
-        console.log("Health: -1;")
-        console.log("Happiness: -1;")
-        console.log("Attack: -1;")
-        console.log("Defense: -1;")
+        console.log("Health:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
       }
       if (answers.quiz2P == "They are the same weight."){
         console.log("-------------------")
         console.log("Your answer 'They are the same weight.' for the 2nd question was correct.")
         timeReverse();
-        console.log("Health: +1;")
-        console.log("Happiness: +1;")
-        console.log("Attack: +1;")
-        console.log("Defense: +1;")
+        console.log("Health:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "+1".green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 2nd question was incorrect.")
         time ();
-        console.log("Health: -1;")
-        console.log("Happiness: -1;")
-        console.log("Attack: -1;")
-        console.log("Defense: -1;")
+        console.log("Health:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
       }
       if (answers.quiz3P == "Nokia 3220"){
         console.log("-------------------")
         console.log("Your answer 'Nokia 3220' for the 3rd question was correct.")
         timeReverse();
-        console.log("Health: +1;")
-        console.log("Happiness: +1;")
-        console.log("Attack: +1;")
-        console.log("Defense: +1;")
+        console.log("Health:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "+1".green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 3rd question was incorrect.")
         time ();
-        console.log("Health: -1;")
-        console.log("Happiness: -1;")
-        console.log("Attack: -1;")
-        console.log("Defense: -1;")
+        console.log("Health:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
       }
       if (answers.quiz4P == "Black"){
         console.log("-------------------")
         console.log("Your answer 'Black' for the 4th question was correct.")
         timeReverse();
-        console.log("Health: +1;")
-        console.log("Happiness: +1;")
-        console.log("Attack: +1;")
-        console.log("Defense: +1;")
+        console.log("Health:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "+1".green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 4th question was incorrect.")
         time ();
-        console.log("Health: -1;")
-        console.log("Happiness: -1;")
-        console.log("Attack: -1;")
-        console.log("Defense: -1;")
+        console.log("Health:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
       }
       if (answers.quiz5P == "The Polar Bear skin is black."){
         console.log("-------------------")
         console.log("Your answer 'The Polar Bear skin is black.' for the 5th question was correct.")
         timeReverse();
-        console.log("Health: +1;")
-        console.log("Happiness: +1;")
-        console.log("Attack: +1;")
-        console.log("Defense: +1;")
+        console.log("Health:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "+1".green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 5th question was incorrect.")
         time ();
-        console.log("Health: -1;")
-        console.log("Happiness: -1;")
-        console.log("Attack: -1;")
-        console.log("Defense: -1;")
+        console.log("Health:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
       }
       if (answers.quiz6P == "3.1415926535"){
         console.log("-------------------")
         console.log("Your answer '3.1415926535' for the 6th question was correct.")
         timeReverse();
-        console.log("Health: +1;")
-        console.log("Happiness: +1;")
-        console.log("Attack: +1;")
-        console.log("Defense: +1;")
+        console.log("Health:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "+1".green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 6th question was incorrect.")
         time ();
-        console.log("Health: -1;")
-        console.log("Happiness: -1;")
-        console.log("Attack: -1;")
-        console.log("Defense: -1;")
+        console.log("Health:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
       }
       if (answers.quiz7P == "David Muir"){
         console.log("-------------------")
         console.log("Your answer 'David Muir' for the 7th question was correct.")
         timeReverse();
-        console.log("Health: +1;")
-        console.log("Happiness: +1;")
-        console.log("Attack: +1;")
-        console.log("Defense: +1;")
+        console.log("Health:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "+1".green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 7th question was incorrect.")
         time ();
-        console.log("Health: -1;")
-        console.log("Happiness: -1;")
-        console.log("Attack: -1;")
-        console.log("Defense: -1;")
+        console.log("Health:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
       }
       if (answers.quiz8P == "43.99 km/h (27.33 mp/h)"){
         console.log("-------------------")
         console.log("Your answer '43.99 km/h (27.33 mp/h)' for the 8th question was correct.")
         timeReverse();
-        console.log("Health: +1;")
-        console.log("Happiness: +1;")
-        console.log("Attack: +1;")
-        console.log("Defense: +1;")
+        console.log("Health:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "+1".green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 8th question was incorrect.")
         time ();
-        console.log("Health: -1;")
-        console.log("Happiness: -1;")
-        console.log("Attack: -1;")
-        console.log("Defense: -1;")
+        console.log("Health:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
       }
       if (answers.quiz9P == "Cooking"){
         console.log("-------------------")
         console.log("Your answer 'Cooking' for the 9th question was correct.")
         timeReverse();
-        console.log("Health: +1;")
-        console.log("Happiness: +1;")
-        console.log("Attack: +1;")
-        console.log("Defense: +1;")
+        console.log("Health:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "+1".green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 9th question was incorrect.")
         time ();
-        console.log("Health: -1;")
-        console.log("Happiness: -1;")
-        console.log("Attack: -1;")
-        console.log("Defense: -1;")
+        console.log("Health:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
       }
       if (answers.quiz10P == "No idea"){
         console.log("-------------------")
         console.log("Your answer 'No idea' for the 10th question was correct.")
         timeReverse();
-        console.log("Health: +1;")
-        console.log("Happiness: +1;")
-        console.log("Attack: +1;")
-        console.log("Defense: +1;")
+        console.log("Health:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "+1".green.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "+1".green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 10th question was incorrect.")
         time ();
-        console.log("Health: -1;")
-        console.log("Happiness: -1;")
-        console.log("Attack: -1;")
-        console.log("Defense: -1;")
+        console.log("Health:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Happiness:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Attack:".black.bgWhite, "-1".red.bgBlack)
+        console.log("-------------------")
+        console.log("Defense:".black.bgWhite, "-1".red.bgBlack)
       }
     })
     .then(() => gameLoop())
@@ -476,16 +544,18 @@ function play () {
         randomMath1 = Math.floor(Math.random()*2);
         attack += randomMath1;
         defense += randomMath1;
-        console.log(`Attack: +${randomMath1}`)
-        console.log(`Defense: +${randomMath1}`)
+        console.log(`Attack:`.black.bgWhite, `+${randomMath1}`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+${randomMath1}`.green.bgBlack)
       } else {
         console.log("-------------------")
         console.log("Your answer for the 1th question was incorrect.")
         randomMath1 = Math.floor(Math.random()*2);
         attack -= randomMath1;
         defense -= randomMath1;
-        console.log(`Attack: -${randomMath1}`)
-        console.log(`Defense: -${randomMath1}`)
+        console.log(`Attack:`.black.bgWhite, `-${randomMath1}`.red.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `-${randomMath1}`.red.bgBlack)
        
       }
       if (answers.math2P == "77"){
@@ -494,8 +564,9 @@ function play () {
         randomMath2 = Math.floor(Math.random()*3);
         attack += randomMath2;
         defense += randomMath2;
-        console.log(`Attack: +${randomMath2}`)
-        console.log(`Defense: +${randomMath2}`)
+        console.log(`Attack:`.black.bgWhite, `+${randomMath2}`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+${randomMath2}`.green.bgBlack)
        
       } else {
         console.log("-------------------")
@@ -503,8 +574,9 @@ function play () {
         randomMath2 = Math.floor(Math.random()*3);
         attack -= randomMath2;
         defense -= randomMath2;
-        console.log(`Attack: -${randomMath2}`)
-        console.log(`Defense: -${randomMath2}`)
+        console.log(`Attack:`.black.bgWhite, `-${randomMath2}`.red.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `-${randomMath2}`.red.bgBlack)
       }
       if (answers.math3P == "4"){
         console.log("-------------------")
@@ -512,8 +584,9 @@ function play () {
         randomMath3 = Math.floor(Math.random()*4);
         attack += randomMath3;
         defense += randomMath3;
-        console.log(`Attack: +${randomMath3}`)
-        console.log(`Defense: +${randomMath3}`)
+        console.log(`Attack:`.black.bgWhite, `+${randomMath3}`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+${randomMath3}`.green.bgBlack)
       
       } else {
         console.log("-------------------")
@@ -521,8 +594,9 @@ function play () {
         randomMath3 = Math.floor(Math.random()*4);
         attack -= randomMath3;
         defense -= randomMath3;
-        console.log(`Attack: -${randomMath3}`)
-        console.log(`Defense: -${randomMath3}`)
+        console.log(`Attack:`.black.bgWhite, `-${randomMath3}`.red.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `-${randomMath3}`.red.bgBlack)
       }
       if (answers.math4P == "12"){
         console.log("-------------------")
@@ -530,8 +604,9 @@ function play () {
         randomMath4 = Math.floor(Math.random()*5);
         attack += randomMath4;
         defense += randomMath4;
-        console.log(`Attack: +${randomMath4}`)
-        console.log(`Defense: +${randomMath4}`)
+        console.log(`Attack:`.black.bgWhite, `+${randomMath4}`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+${randomMath4}`.green.bgBlack)
       
       } else {
         console.log("-------------------")
@@ -539,8 +614,9 @@ function play () {
         randomMath4 = Math.floor(Math.random()*5);
         attack -= randomMath4;
         defense -= randomMath4;
-        console.log(`Attack: -${randomMath4}`)
-        console.log(`Defense: -${randomMath4}`)
+        console.log(`Attack:`.black.bgWhite, `-${randomMath4}`.red.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `-${randomMath4}`.red.bgBlack)
       }
       if (answers.math5P == "7"){
         console.log("-------------------")
@@ -548,8 +624,9 @@ function play () {
         randomMath5 = Math.floor(Math.random()*6);
         attack += randomMath5;
         defense += randomMath5;
-        console.log(`Attack: +${randomMath5}`)
-        console.log(`Defense: +${randomMath5}`)
+        console.log(`Attack:`.black.bgWhite, `+${randomMath5}`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+${randomMath5}`.green.bgBlack)
       
       } else {
         console.log("-------------------")
@@ -557,8 +634,9 @@ function play () {
         randomMath5 = Math.floor(Math.random()*6);
         attack -= randomMath5;
         defense -= randomMath5;
-        console.log(`Attack: -${randomMath5}`)
-        console.log(`Defense: -${randomMath5}`)
+        console.log(`Attack:`.black.bgWhite, `-${randomMath5}`.red.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `-${randomMath5}`.red.bgBlack)
       }
       if (answers.math6P == "56"){
         console.log("-------------------")
@@ -566,8 +644,9 @@ function play () {
         randomMath6 = Math.floor(Math.random()*7);
         attack += randomMath6;
         defense += randomMath6;
-        console.log(`Attack: +${randomMath6}`)
-        console.log(`Defense: +${randomMath6}`)
+        console.log(`Attack:`.black.bgWhite, `+${randomMath6}`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+${randomMath6}`.green.bgBlack)
       
       } else {
         console.log("-------------------")
@@ -575,8 +654,9 @@ function play () {
         randomMath6 = Math.floor(Math.random()*7);
         attack -= randomMath6;
         defense -= randomMath6;
-        console.log(`Attack: -${randomMath6}`)
-        console.log(`Defense: -${andomMath6}`)
+        console.log(`Attack:`.black.bgWhite, `-${randomMath6}`.red.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `-${randomMath6}`.red.bgBlack)
       }
       if (answers.math7P == "9"){
         console.log("-------------------")
@@ -584,8 +664,9 @@ function play () {
         randomMath7 = Math.floor(Math.random()*8);
         attack += randomMath7;
         defense += randomMath7;
-        console.log(`Attack: +${randomMath7}`)
-        console.log(`Defense: +${randomMath7}`)
+        console.log(`Attack:`.black.bgWhite, `+${randomMath7}`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+${randomMath7}`.green.bgBlack)
       
       } else {
         console.log("-------------------")
@@ -593,8 +674,9 @@ function play () {
         randomMath7 = Math.floor(Math.random()*8);
         attack -= randomMath7;
         defense -= randomMath7;
-        console.log(`Attack: -${randomMath7}`)
-        console.log(`Defense: -${randomMath7}`)
+        console.log(`Attack:`.black.bgWhite, `-${randomMath7}`.red.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `-${randomMath7}`.red.bgBlack)
       }
       if (answers.math8P == "9"){
         console.log("-------------------")
@@ -602,8 +684,9 @@ function play () {
         randomMath8 = Math.floor(Math.random()*9);
         attack += randomMath8;
         defense += randomMath8;
-        console.log(`Attack: +${randomMath8}`)
-        console.log(`Defense: +${randomMath8}`)
+        console.log(`Attack:`.black.bgWhite, `+${randomMath8}`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+${randomMath8}`.green.bgBlack)
       
       } else {
         console.log("-------------------")
@@ -611,8 +694,9 @@ function play () {
         randomMath8= Math.floor(Math.random()*9);
         attack -= randomMath8;
         defense -= randomMath8;
-        console.log(`Attack: -${randomMath8}`)
-        console.log(`Defense: -${randomMath8}`)
+        console.log(`Attack:`.black.bgWhite, `-${randomMath8}`.red.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `-${randomMath8}`.red.bgBlack)
       }
       if (answers.math9P == "428571"){
         console.log("-------------------")
@@ -620,8 +704,9 @@ function play () {
         randomMath9 = Math.floor(Math.random()*10);
         attack += randomMath9;
         defense += randomMath9;
-        console.log(`Attack: +${randomMath9}`)
-        console.log(`Defense: +${randomMath9}`)
+        console.log(`Attack:`.black.bgWhite, `+${randomMath9}`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+${randomMath9}`.green.bgBlack)
        
       } else {
         console.log("-------------------")
@@ -629,8 +714,9 @@ function play () {
         randomMath9 = Math.floor(Math.random()*10);
         attack -= randomMath9;
         defense -= randomMath9;
-        console.log(`Attack: -${randomMath9}`)
-        console.log(`Defense: -${randomMath9}`)
+        console.log(`Attack:`.black.bgWhite, `-${randomMath9}`.red.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `-${randomMath9}`.red.bgBlack)
       }
       if (answers.math10P == "9.86"){
         console.log("-------------------")
@@ -638,8 +724,9 @@ function play () {
         randomMath10 = Math.floor(Math.random()*11);
         attack += randomMath10;
         defense += randomMath10;
-        console.log(`Attack: +${randomMath10}`)
-        console.log(`Defense: +${randomMath10}`)
+        console.log(`Attack:`.black.bgWhite, `+${randomMath10}`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+${randomMath10}`.green.bgBlack)
 
       } else {
         console.log("-------------------")
@@ -647,8 +734,9 @@ function play () {
         randomMath10 = Math.floor(Math.random()*11);
         attack -= randomMath10;
         defense -= randomMath10;
-        console.log(`Attack: -${randomMath10}`)
-        console.log(`Defense: -${randomMath10}`)
+        console.log(`Attack:`.black.bgWhite, `-${randomMath10}`.red.bgBlack)
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `-${randomMath10}`.red.bgBlack)
       }
     })
     .then(() => gameLoop())
@@ -734,8 +822,9 @@ function hunt () {
           console.log("-------------------")
           health += 30;
           happiness +30;
-          console.log("Health: +30")
-          console.log("Happiness: +30")
+          console.log(`Health:`.black.bgWhite, `+30`.green.bgBlack)
+          console.log("-------------------")
+          console.log(`Happiness:`.black.bgWhite, `+30`.green.bgBlack)
           gameLoop();
         } else {
           console.log("Your Attack or Defense was too low.")
@@ -743,8 +832,9 @@ function hunt () {
           console.log("-------------------")
           health -= 10;
           happiness -= 10;
-          console.log("Health: -10")
-          console.log("Happiness: -10")
+          console.log(`Health:`.black.bgWhite, `-10`.red.bgBlack)
+          console.log("-------------------")
+          console.log(`Happiness:`.black.bgWhite, `-10`.red.bgBlack)
           console.log("-------------------")
           if (health <= 0 || happiness <= 0){
             theEnd();
@@ -777,8 +867,9 @@ function hunt () {
         console.log("-------------------")
         health += 15;
         happiness += 15;
-        console.log("Health: +15")
-        console.log("Happiness: +15")
+        console.log(`Health:`.black.bgWhite, `+15`.green.bgBlack)
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+15`.green.bgBlack)
         console.log("-------------------")
         gameLoop();
       } else {
@@ -804,7 +895,7 @@ function hunt () {
           happiness = 200;
           attack = 200;
           defense = 200;
-          console.log("All your Status level went up to 200! :)")
+          console.log("All your Status level went up to 200! :)".green.bgBlack)
           gameLoop();
         } else if (attack >= 191) {
           console.log("You are brave, but you are exhausted.")
@@ -884,10 +975,13 @@ function learn () {
         console.log("1, 2, 3, 4, 5, 6, 7, 8, 9, 10")
         console.log("-------------------")
         timeReverse();
-        console.log(`Health: +1`);
-        console.log(`Happiness: +1`);
-        console.log(`Attack: +1`);
-        console.log(`Defense: +1`);
+        console.log(`Health:`.black.bgWhite, `+1`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+1`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Attack:`.black.bgWhite, `+1`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+1`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.mathP == "Addition") {
@@ -907,10 +1001,13 @@ function learn () {
         console.log("-------------------")
         timeReverse();
         timeReverse();
-        console.log(`Health: +2`);
-        console.log(`Happiness: +2`);
-        console.log(`Attack: +2`);
-        console.log(`Defense: +2`);
+        console.log(`Health:`.black.bgWhite, `+2`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+2`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Attack:`.black.bgWhite, `+2`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+2`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.mathP == "Subtraction") {
@@ -931,10 +1028,13 @@ function learn () {
         timeReverse();
         timeReverse();
         timeReverse();
-        console.log(`Health: +3`);
-        console.log(`Happiness: +3`);
-        console.log(`Attack: +3`);
-        console.log(`Defense: +3`);
+        console.log(`Health:`.black.bgWhite, `+3`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+3`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Attack:`.black.bgWhite, `+3`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+3`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.mathP == "Multiplication") {
@@ -955,10 +1055,13 @@ function learn () {
         timeReverse();
         timeReverse();
         timeReverse();
-        console.log(`Health: +3`);
-        console.log(`Happiness: +3`);
-        console.log(`Attack: +3`);
-        console.log(`Defense: +3`);
+        console.log(`Health:`.black.bgWhite, `+3`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+3`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Attack:`.black.bgWhite, `+3`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+3`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.mathP == "Division") {
@@ -980,10 +1083,13 @@ function learn () {
         timeReverse();
         timeReverse();
         timeReverse();
-        console.log(`Health: +4`);
-        console.log(`Happiness: +4`);
-        console.log(`Attack: +4`);
-        console.log(`Defense: +4`);
+        console.log(`Health:`.black.bgWhite, `+4`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+4`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Attack:`.black.bgWhite, `+4`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+4`.green.bgBlack);
         console.log("-------------------")
       }
     })
@@ -1010,7 +1116,7 @@ function learn () {
         console.log("Good Night = Buenos noches")
         console.log("-------------------")
         happiness += 1;
-        console.log("Happiness: +1")
+        console.log(`Happiness:`.black.bgWhite, `+1`.green.bgBlack)
         console.log("-------------------")
       }
       if (answer.spanishP == "Travel") {
@@ -1023,7 +1129,7 @@ function learn () {
         console.log("Airport = Aeropuerto")
         console.log("-------------------")
         happiness += 2;
-        console.log("Happiness: +2")
+        console.log(`Happiness:`.black.bgWhite, `+2`.green.bgBlack)
         console.log("-------------------")
       }
       if (answer.spanishP == "Family") {
@@ -1036,7 +1142,7 @@ function learn () {
         console.log("Boy = Nino")
         console.log("-------------------")
         happiness += 3;
-        console.log("Happiness: +3")
+        console.log(`Happiness:`.black.bgWhite, `+3`.green.bgBlack)
         console.log("-------------------")
       }
       if (answer.spanishP == "Restaurant") {
@@ -1049,7 +1155,7 @@ function learn () {
         console.log("Money = Dinero")
         console.log("-------------------")
         happiness += 4;
-        console.log("Happiness: +4")
+        console.log(`Happiness:`.black.bgWhite, `+4`.green.bgBlack)
         console.log("-------------------")
       }
       if (answer.spanishP == "Shopping") {
@@ -1062,7 +1168,7 @@ function learn () {
         console.log("Vestido = Dress")
         console.log("-------------------")
         happiness += 5;
-        console.log("Happiness: +5")
+        console.log(`Happiness:`.black.bgWhite, `+5`.green.bgBlack)
         console.log("-------------------")
       }
     })
@@ -1094,10 +1200,13 @@ function learn () {
         console.log("</html>")
         console.log("-------------------")
         timeReverse();
-        console.log(`Health: +1`);
-        console.log(`Happiness: +1`);
-        console.log(`Attack: +1`);
-        console.log(`Defense: +1`);
+        console.log(`Health:`.black.bgWhite, `+1`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+1`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Attack:`.black.bgWhite, `+1`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+1`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.programmingP == "CSS") {
@@ -1120,10 +1229,13 @@ function learn () {
         console.log("-------------------")
         timeReverse();
         timeReverse();
-        console.log(`Health: +2`);
-        console.log(`Happiness: +2`);
-        console.log(`Attack: +2`);
-        console.log(`Defense: +2`);
+        console.log(`Health:`.black.bgWhite, `+2`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+2`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Attack:`.black.bgWhite, `+2`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+2`.green.bgBlack);
         console.log("-------------------")
       }
       if (answer.programmingP == "JavaScript") {
@@ -1140,10 +1252,13 @@ function learn () {
         timeReverse();
         timeReverse();
         timeReverse();
-        console.log(`Health: +3`);
-        console.log(`Happiness: +3`);
-        console.log(`Attack: +3`);
-        console.log(`Defense: +3`);
+        console.log(`Health:`.black.bgWhite, `+3`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Happiness:`.black.bgWhite, `+3`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Attack:`.black.bgWhite, `+3`.green.bgBlack);
+        console.log("-------------------")
+        console.log(`Defense:`.black.bgWhite, `+3`.green.bgBlack);
         console.log("-------------------")
       }
     })
@@ -1645,9 +1760,9 @@ const status = () => {
       if (answer.statusP == "Yes"){
         console.log("-------------------")
         console.log(pet);
-        console.log("--------------------------------------------------------------")
-        console.log("|",`Health: ${health}`.green ,"||", `Happiness: ${happiness}`.blue, "||", `Attack: ${attack}`.red, "||", `Defense: ${defense}`.magenta, "|");
-        console.log("--------------------------------------------------------------")
+        console.log("-----------------------------------------------------------".black.bgWhite)
+        console.log(`| Health: ${health} | Happiness: ${happiness} | Attack: ${attack} | Defense: ${defense} |`.black.bgWhite);
+        console.log("-----------------------------------------------------------".black.bgWhite)
         console.log("Let's interact with your pet.")
         console.log("-------------------")
       } else {
