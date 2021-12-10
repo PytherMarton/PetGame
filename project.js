@@ -1,15 +1,61 @@
 const { shark } = require("cli-spinners");
 const inquirer = require("inquirer");
 const colors = require('colors');
+const figlet = require('figlet');
 
 health = 100;
 happiness = 100;
 attack = 100;
 defense = 100;
+petStat = "";
+
+const unicorn = () => {
+  console.log("               ,,))))))));,");
+  console.log("            __)))))))))))))),");
+  console.log("\|/      -\(((((''''((((((((.");
+  console.log("-*-==//////((''  .     `)))))),");
+  console.log("/|\      ))| o    ;-.    '(((((                                  ,(,");
+  console.log("          ( `|    /  )    ;))))'                               ,_))^;(~");
+  console.log("            |   |   |   ,))((((_     _____------~~~-.        %,;(;(>';'~");
+  console.log("            o_);   ;    )))(((` ~---~  `::           \      %%~~)(v;(`('~");
+  console.log("                  ;    ''''````         `:       `:::|\,__,%%    );`'; ~");
+  console.log("                |   _                )     /      `:|`----'     `-'");
+  console.log("         ______/\/~    |                 /        /");
+  console.log("        /~;;.____/;;'  /          ___--,-(   `;;;/");
+  console.log("       / //  _;______;'------~~~~~    /;;/\    /");
+  console.log("      //  | |                        / ;   \;;,");
+  console.log("     (<_  | ;                      /',/-----'  _>");
+  console.log("     \_| ||_                     //~;~~~~~~~~~");
+  console.log("     `\_|                       (,~~ ");
+  console.log("                                \~");
+  console.log("                                 ~~")
+}
+
+const seahorse = () => {
+
+}
+
+const tiger = () => {
+
+}
 
 function theEnd(){
-  console.log("Your Pet Died :((((");
-  console.log("THE END")
+  setTimeout(function() {
+    console.log(figlet.textSync('THE END!', {
+      font: 'Doh',
+      horizontalLayout: 'default',
+      verticalLayout: 'default',
+      width: 120,
+      whitespaceBreak: true
+  }));
+  }, 3000);
+  console.log(figlet.textSync('Your  Pet  DIED !  :/', {
+    font: 'Standard',
+    horizontalLayout: 'default',
+    verticalLayout: 'default',
+    width: 120,
+    whitespaceBreak: true
+}));
 }
 
 function time () {
@@ -39,8 +85,23 @@ function statusOption () {
     ])
     .then((answer) => {
       if (answer.statusOptionP == "Full status"){
-        console.log("-------------------")
-        console.log(pet);
+        if (pet == unicorn){
+          console.log("-------------------------------------------------------------------------------------------------")
+          unicorn();
+          console.log("-------------------------------------------------------------------------------------------------")
+          console.log(petStat);
+        } else if (pet == seahorse){
+          console.log("-------------------------------------------------------------------------------------------------")
+          seahorse();
+          console.log("-------------------------------------------------------------------------------------------------")
+          console.log(petStat);
+        } else {
+          console.log("-------------------------------------------------------------------------------------------------")
+          tiger();
+          console.log("-------------------------------------------------------------------------------------------------")
+          console.log(petStat);
+        }
+        console.log("-------------------------------------------------------------------------------------------------")
         console.log("-----------------------------------------------------------".black.bgWhite)
         console.log(`| Health: ${health} | Happiness: ${happiness} | Attack: ${attack} | Defense: ${defense} |`.black.bgWhite);
         console.log("-----------------------------------------------------------".black.bgWhite)
@@ -1555,6 +1616,26 @@ class Unicorn extends Pet {
       super(type, name, colour, sex, superpower);
       this.skill = skill;
 
+      console.log("               ,,))))))));,");
+      console.log("            __)))))))))))))),");
+      console.log("\|/      -\(((((''''((((((((.");
+      console.log("-*-==//////((''  .     `)))))),");
+      console.log("/|\      ))| o    ;-.    '(((((                                  ,(,");
+      console.log("          ( `|    /  )    ;))))'                               ,_))^;(~");
+      console.log("            |   |   |   ,))((((_     _____------~~~-.        %,;(;(>';'~");
+      console.log("            o_);   ;    )))(((` ~---~  `::           \      %%~~)(v;(`('~");
+      console.log("                  ;    ''''````         `:       `:::|\,__,%%    );`'; ~");
+      console.log("                |   _                )     /      `:|`----'     `-'");
+      console.log("         ______/\/~    |                 /        /");
+      console.log("        /~;;.____/;;'  /          ___--,-(   `;;;/");
+      console.log("       / //  _;______;'------~~~~~    /;;/\    /");
+      console.log("      //  | |                        / ;   \;;,");
+      console.log("     (<_  | ;                      /',/-----'  _>");
+      console.log("     \_| ||_                     //~;~~~~~~~~~");
+      console.log("     `\_|                       (,~~ ");
+      console.log("                                \~");
+      console.log("                                 ~~")
+
       if(type == "Baby") {
         health = 90;
       } else if (type == "Adult") {
@@ -1698,6 +1779,7 @@ class Tiger extends Pet {
 }
 
 const init = () => {
+  console.clear();
   inquirer
     .prompt([
       {
@@ -1707,13 +1789,19 @@ const init = () => {
       }
     ])
     .then((answer) => {
-      console.log(`Welcome ${answer.name}!`)
+      console.log(figlet.textSync(`Welcome  ${answer.name} !  :d`, {
+        font: 'Standard',
+        horizontalLayout: 'default',
+        verticalLayout: 'default',
+        width: 120,
+        whitespaceBreak: true
+    }));
     })
     .then(() => {
       setTimeout(function() {
         console.clear();
         petBuild()
-      }, 3000);
+      }, 4000);
     })
 }
 
@@ -1759,10 +1847,16 @@ const petBuild = () => {
     .then((answers) => {
       if (answers.petP == "Unicorn"){
         pet = new Unicorn (`${answers.typeP}`, `${answers.nameP}`, `${answers.colourP}`, `${answers.genderP}`, `${answers.powerP}`, "Magic");
+        petStat = `| Type: ${answers.typeP} | Name: ${answers.nameP} | Colour: ${answers.colourP} | Gender: ${answers.genderP} | Power: ${answers.powerP} | Unic skill: Magic |`;
+        pet = unicorn;
       } else if (answers.petP == "Seahorse"){
         pet = new Seahorse (`${answers.typeP}`, `${answers.nameP}`, `${answers.colourP}`, `${answers.genderP}`, `${answers.powerP}`, "Meditate");
+        petStat = `| Type: ${answers.typeP} | Name: ${answers.nameP} | Colour: ${answers.colourP} | Gender: ${answers.genderP} | Power: ${answers.powerP} | Unic skill: Meditate |`;
+        pet = seahorse;
       } else {
         pet = new Tiger (`${answers.typeP}`, `${answers.nameP}`, `${answers.colourP}`, `${answers.genderP}`, `${answers.powerP}`, "Bite");
+        petStat = `| Type: ${answers.typeP} | Name: ${answers.nameP} | Colour: ${answers.colourP} | Gender: ${answers.genderP} | Power: ${answers.powerP} | Unic skill: Bite |`;
+        pet = tiger;
       }
     })
     .then(() => {
@@ -1783,8 +1877,23 @@ const status = () => {
     ])
     .then((answer) => {
       if (answer.statusP == "Yes"){
-        console.log("-------------------")
-        console.log(pet);
+        if (pet == unicorn){
+          console.log("-------------------------------------------------------------------------------------------------")
+          unicorn();
+          console.log("-------------------------------------------------------------------------------------------------")
+          console.log(petStat);
+        } else if (pet == seahorse){
+          console.log("-------------------------------------------------------------------------------------------------")
+          seahorse();
+          console.log("-------------------------------------------------------------------------------------------------")
+          console.log(petStat);
+        } else {
+          console.log("-------------------------------------------------------------------------------------------------")
+          tiger();
+          console.log("-------------------------------------------------------------------------------------------------")
+          console.log(petStat);
+        }
+        console.log("-------------------------------------------------------------------------------------------------")
         console.log("-----------------------------------------------------------".black.bgWhite)
         console.log(`| Health: ${health} | Happiness: ${happiness} | Attack: ${attack} | Defense: ${defense} |`.black.bgWhite);
         console.log("-----------------------------------------------------------".black.bgWhite)
@@ -1872,6 +1981,9 @@ const gameLoop = () => {
 module.exports = {
   name: "project.js",
   desc: "Full game",
+  unicorn,
+  seahorse,
+  tiger,
   theEnd,
   time,
   timeReverse,
