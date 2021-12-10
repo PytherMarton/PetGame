@@ -1944,13 +1944,13 @@ const status = () => {
         console.log("-----------------------------------------------------------".black.bgWhite)
         console.log(`| Health: ${health} | Happiness: ${happiness} | Attack: ${attack} | Defense: ${defense} |`.black.bgWhite);
         console.log("-----------------------------------------------------------".black.bgWhite)
-        console.log("-------------------")
+        console.log("-----------------------------")
         console.log("Let's interact with your pet.")
-        console.log("-------------------")
+        console.log("-----------------------------")
       } else {
-        console.log("-------------------")
+        console.log("-----------------------------")
         console.log("Let's interact with your pet.");
-        console.log("-------------------")
+        console.log("-----------------------------")
       }
     })
     .then(() => {
@@ -1974,6 +1974,24 @@ const gameLoop = () => {
     theEnd();
   } else {
     time();
+    console.log("                     ,---.           ,---.");
+    console.log("                    / /'`.).--'''--./,'') )");
+    console.log("                    ) )    _       _    / /");
+    console.log("                     `./  / __   __ )  ;,/ ");
+    console.log("                      /    /_O)_(_O)    |");
+    console.log("                      |  .-'  ___  `-.  |");
+    console.log("                   .--|       )_/       |--.");
+    console.log("                 ,'    )   )   |   /   /    `.");
+    console.log("                /       `.  `--^--'  ,'       )");
+    console.log("             .-''``'-.    `--.___.--'     .-''`''-.");
+    console.log(".-----------/         )------------------/         )--------------.");
+    console.log("| .---------)         /----------------- )         /------------. |");
+    console.log("| |          `-`--`--'                    `--'--'-'             | |");
+    console.log("| |                                                             | |");
+    console.log("| |                                                             | |");
+    console.log("| |                 Interact with your pet! :)                  | |");
+    console.log("| |                                                             | |");
+    console.log("| |                                                             | |");
   inquirer
     .prompt([
       {
