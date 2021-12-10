@@ -1980,44 +1980,44 @@ const gameLoop = () => {
         type: "list",
         name: "optionP",
         message: "What would you like to do next? ",
-        choices: ["> Check your Pet Status <", "Eat", "Drink", "Play", "Hunt", "Learn", "Sleep", "Bath", "* Use your Unic skill *"],
+        choices: ["1: Check your Pet Status".underline, "2. Eat".underline, "3. Drink".underline, "4. Play".underline, "5. Hunt".underline, "6. Learn".underline, "7. Sleep".underline, "8. Bath".underline, "9. * Use your Unic skill *".underline],
       },
     ])
     .then((answer) => {
       console.clear();
-      if (answer.optionP == "> Check your Pet Status <"){
+      if (answer.optionP == "1: Check your Pet Status".underline){
         console.log("-------------------");
         statusOption();
       }
-      if (answer.optionP == "Eat"){
+      if (answer.optionP == "2. Eat".underline){
         console.log("-------------------");
         eat();
       }
-      if (answer.optionP == "Drink"){
+      if (answer.optionP == "3. Drink".underline){
         console.log("-------------------");
         drink();
       }
-      if (answer.optionP == "Play"){
+      if (answer.optionP == "4. Play".underline){
         console.log("-------------------");
         play();
       }
-      if (answer.optionP == "Hunt"){
+      if (answer.optionP == "5. Hunt".underline){
         console.log("-------------------");
         hunt();
       }
-      if (answer.optionP == "Learn"){
+      if (answer.optionP == "6. Learn".underline){
         console.log("-------------------");
         learn();
       }
-      if (answer.optionP == "Sleep"){
+      if (answer.optionP == "7. Sleep".underline){
         console.log("-------------------");
         sleep();
       }
-      if (answer.optionP == "Bath"){
+      if (answer.optionP == "8. Bath".underline){
         console.log("-------------------");
         bath();
       }
-      if (answer.optionP == "* Use your Unic skill *"){
+      if (answer.optionP == "9. * Use your Unic skill *".underline){
         console.log("-------------------");
         skills();
       }
