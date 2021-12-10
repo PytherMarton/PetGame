@@ -53,8 +53,33 @@ const seahorse = () => {
   console.log("', ; ', ; ', ; ', ; ', ; ', ; ', ; ', ; ', ; ', ; ', ; ', ; ', ; ', ;");
 }
 
-const tiger = () => {
-
+const wolf = () => {
+  console.log("                                      __");
+  console.log("                                   .d$$b");
+  console.log("                                  .' TO$;)");
+  console.log("                                 /  : TP._;");
+  console.log("                                / _.;  :Tb|");
+  console.log("                               /   /   ;j$j");
+  console.log("                           _.-'       d$$$$'");
+  console.log("                         .' ..       d$$$$;");
+  console.log("                        /  /P'      d$$$$P. |)");
+  console.log("                       /   ``      .d$$$P' |)^`l");
+  console.log("                     .'           `T$P^``````  :");
+  console.log("                 ._.'      _.'                ;");
+  console.log("              `-.-'.-'-' ._.       _.-`     .-")
+  console.log("            `.-`` _____  ._              .-''");
+  console.log("           -(.g$$$$$$$b.              .'");
+  console.log("             ```^^T$$$P^)            .(:");
+  console.log("                _/  -``  /.'        /:/;");
+  console.log("             ._.'-'`-'  '')/         /;/;");
+  console.log("          `-.-'..--'''   ' /          /  ;");
+  console.log("        .-'' ..--'`'        -'          :");
+  console.log("        ..--```--.-'         ()      .-()");
+  console.log("          ..--```              `-)()/;`");
+  console.log("              _.                      :");
+  console.log("                                      ;`-");
+  console.log("                                     :)");
+  console.log("                                     ;  ");
 }
 
 function theEnd(){
@@ -108,18 +133,20 @@ function statusOption () {
           unicorn();
           console.log("-------------------------------------------------------------------------------------------------")
           console.log(petStat);
+          console.log("-------------------------------------------------------------------------------------------------")
         } else if (pet == seahorse){
-          console.log("-------------------------------------------------------------------------------------------------")
+          console.log("---------------------------------------------------------------------------------------------------")
           seahorse();
-          console.log("-------------------------------------------------------------------------------------------------")
+          console.log("---------------------------------------------------------------------------------------------------")
           console.log(petStat);
+          console.log("---------------------------------------------------------------------------------------------------")
         } else {
           console.log("-------------------------------------------------------------------------------------------------")
-          tiger();
+          wolf();
           console.log("-------------------------------------------------------------------------------------------------")
           console.log(petStat);
+          console.log("-------------------------------------------------------------------------------------------------")
         }
-        console.log("-------------------------------------------------------------------------------------------------")
         console.log("-----------------------------------------------------------".black.bgWhite)
         console.log(`| Health: ${health} | Happiness: ${happiness} | Attack: ${attack} | Defense: ${defense} |`.black.bgWhite);
         console.log("-----------------------------------------------------------".black.bgWhite)
@@ -1747,7 +1774,7 @@ class Seahorse extends Pet {
     }
 }
 
-class Tiger extends Pet {
+class Wolf extends Pet {
     constructor(type, name, colour, sex, superpower, skill) {
       super(type, name, colour, sex, superpower);
       this.skill = skill;
@@ -1830,7 +1857,7 @@ const petBuild = () => {
         type: "list",
         name: "petP",
         message: "Please choose a pet: ",
-        choices: ["Unicorn", "Seahorse", "Tiger"],
+        choices: ["Unicorn", "Seahorse", "Wolf"],
       },
       {
         type: "input",
@@ -1872,9 +1899,9 @@ const petBuild = () => {
         petStat = `| Type: ${answers.typeP} | Name: ${answers.nameP} | Colour: ${answers.colourP} | Gender: ${answers.genderP} | Power: ${answers.powerP} | Unic skill: Meditate |`;
         pet = seahorse;
       } else {
-        pet = new Tiger (`${answers.typeP}`, `${answers.nameP}`, `${answers.colourP}`, `${answers.genderP}`, `${answers.powerP}`, "Bite");
+        pet = new Wolf (`${answers.typeP}`, `${answers.nameP}`, `${answers.colourP}`, `${answers.genderP}`, `${answers.powerP}`, "Bite");
         petStat = `| Type: ${answers.typeP} | Name: ${answers.nameP} | Colour: ${answers.colourP} | Gender: ${answers.genderP} | Power: ${answers.powerP} | Unic skill: Bite |`;
-        pet = tiger;
+        pet = wolf;
       }
     })
     .then(() => {
@@ -1900,18 +1927,20 @@ const status = () => {
           unicorn();
           console.log("-------------------------------------------------------------------------------------------------")
           console.log(petStat);
+          console.log("-------------------------------------------------------------------------------------------------")
         } else if (pet == seahorse){
-          console.log("-------------------------------------------------------------------------------------------------")
+          console.log("---------------------------------------------------------------------------------------------------")
           seahorse();
-          console.log("-------------------------------------------------------------------------------------------------")
+          console.log("---------------------------------------------------------------------------------------------------")
           console.log(petStat);
+          console.log("---------------------------------------------------------------------------------------------------")
         } else {
           console.log("-------------------------------------------------------------------------------------------------")
-          tiger();
+          wolf();
           console.log("-------------------------------------------------------------------------------------------------")
           console.log(petStat);
+          console.log("-------------------------------------------------------------------------------------------------")
         }
-        console.log("-------------------------------------------------------------------------------------------------")
         console.log("-----------------------------------------------------------".black.bgWhite)
         console.log(`| Health: ${health} | Happiness: ${happiness} | Attack: ${attack} | Defense: ${defense} |`.black.bgWhite);
         console.log("-----------------------------------------------------------".black.bgWhite)
@@ -2001,7 +2030,7 @@ module.exports = {
   desc: "Full game",
   unicorn,
   seahorse,
-  tiger,
+  wolf,
   theEnd,
   time,
   timeReverse,
@@ -2017,7 +2046,7 @@ module.exports = {
   Pet,
   Unicorn,
   Seahorse,
-  Tiger,
+  Wolf,
   init,
   petBuild,
   status,
